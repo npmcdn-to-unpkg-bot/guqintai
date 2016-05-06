@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>登陆-古琴台</title>
+    
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="/static/css/main.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--<script src="{% static "js/ie-emulation-modes-warning.js" %}"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  
+  <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top reg-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img src="/static/img/logo2.png" />
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+  
+
+   
+
+
+  <div class="container" style="margin-top:100px">
+  <div class="row">
+  <div class="col-md-4 col-md-offset-4">
+
+    <form  method="post">
+      {% csrf_token %}
+
+     <div class="form-group">
+        <label for="username">用户名</label>
+        <input type="text" class="form-control" id="username" name="username" />
+     </div>
+ 
+     <div class="form-group">
+        <label for="password">密码</label>
+        <input type="password" class="form-control" id="password" name="password"/>
+     </div>
+     
+
+     <input type="hidden" name="callback" value='{{callback}}' />
+     <input type="hidden" name="src" value='{{src}}' />
+    
+     {% if error %}
+     <div class="form-group">
+         <p class='text-danger'> 
+         <strong>{{error}}!!!</strong>
+         </p>
+     </div>
+     {% endif %}
+
+     <button type="submit" class="btn btn-lg btn-success btn-block">登陆</button>
+    </form>
+
+
+  </div> 
+  </div>
+  </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">古琴台版权所有 &copy; 2010-2016</p>
+      </div>
+    </footer>
+    
+
+  
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>       
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>
