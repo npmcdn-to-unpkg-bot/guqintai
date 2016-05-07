@@ -1,72 +1,9 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>Blog Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="/static/css/main.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    
-
-
-    
-    
-    
-    
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-
-
-   <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">首页</a>
-          <a class="blog-nav-item" href="#">技术</a>
-          <a class="blog-nav-item" href="#">人物</a>
-          <a class="blog-nav-item" href="#">随笔</a>
-          <a class="blog-nav-item" href="#">关于</a>
-        </nav>
-      </div>
-    </div>
-
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">要么强大，要么倒下</h1>
-        <p class="lead blog-description">引自田偉</p>
-      </div>
+{% include "head.html" %}
+    <div class="container" style="margin-top:30px">
 
       <div class="row">
       
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-8">
                 <form method="post">
                 {% csrf_token %}
 
@@ -86,7 +23,7 @@
 
 
                 <div class="form-group">
-                    <label>发布板块</label>
+                    <label>类目</label>
                     <br>
                     <label class="radio-inline">
                         <input type="radio" name="category" id="inlineRadio1" value="1" checked> 技术
@@ -101,8 +38,7 @@
                 </div>
                 
                 <div class="form-group text-center">
-                    <button type="button" class="btn btn-link">保存草稿</button>
-                    <button type="button" class="btn btn-success">预览</button>
+                    <button type="button" class="btn btn-success">保存</button>
                     <button type="submit" class="btn btn-primary">发布</button>
                 </div>
             </form>
@@ -110,62 +46,17 @@
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
+            <form method="post" action="" enctype="multipart/form-data">
+                {% csrf_token %}
+		<label>File Input: <input type="file" name="file" id="demo1" /></label>
+		<div id="uploads">
+		</div>
+	    </form>
+
+        </div> 
 
       </div><!-- /.row -->
 
     </div><!-- /.container -->
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted">古琴台 Copyright &copy; 2010-2016</p>
-      </div>
-    </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>       
-    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
-    <script src="http://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-    
-    <script>
-
-     $(document).ready(function(){
-     var simplemde = new SimpleMDE({ element: document.getElementById("my-edit-area") });
-});
-</script>
-    
-    
-  </body>
-</html>
+{% include "foot.html" with blog_post_extend_js=True %}

@@ -43,12 +43,17 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#FILE_UPLOAD_HANDLERS = [
+#    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+#]
+
 
 ROOT_URLCONF = 'web.urls'
 
@@ -81,7 +86,7 @@ DATABASES = {
 }
 from mongoengine import connect
 MONGO_DATABASE_NAME = 'test_abc'
-MONGO_HOST = '10.172.71.95'        # 10.172.71.87 server
+MONGO_HOST = 'localhost'        # 10.172.71.87 server
 MONGO_PORT = 27017
 connect(MONGO_DATABASE_NAME, host=MONGO_HOST, port=MONGO_PORT)
 
@@ -131,4 +136,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
    ("css", os.path.join(STATIC_ROOT,'css')),
    ("lib", os.path.join(STATIC_ROOT,'lib')),
+   ("js", os.path.join(STATIC_ROOT,'js')),
+   ("upload", os.path.join(STATIC_ROOT,'upload')),
+
+
+
 ]

@@ -4,4 +4,6 @@ from blog import views as View
 urlpatterns = [
     url('^$', View.Index.as_view()),
     url('^post', View.Post.as_view()),
+    url('^list/', View.List.as_view()),
+
 ]

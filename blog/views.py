@@ -5,6 +5,9 @@ from django.http import HttpResponse, HttpResponseForbidden
 
 from mongoengine import DoesNotExist
 from models import Article
+
+from markdown import markdown 
+
 # Create your views here.
 class Index(TemplateView):
 
@@ -18,7 +21,7 @@ class Post(TemplateView):
 
     def get(self, request, *args, **kwargs):
         if request.session.get('account_id', None) is None:
-            return HttpResponseRedirect('/account/login/')
+            return HttpResponseRedirect('/account/login')
         para = {}
         t = TemplateResponse(request, 'post.html', para)
         return t
@@ -26,7 +29,7 @@ class Post(TemplateView):
     
     def post(self, request, *args, **kwargs):
         if request.session.get('account_id', None) is None:
-            return HttpResponseRedirect('/account/login/')
+            return HttpResponseRedirect('/account/login')
 
         d = request.POST
         i = Article()
@@ -40,7 +43,23 @@ class Post(TemplateView):
         i.content = d['content'] 
         i.save()
 
-        return HttpResponseRedirect('/blog/')
+        return HttpResponseRedirect('/blog')
 
+class List(TemplateView):
 
+    def get(self, request, *args, **kwargs):
+        d = request.GET.dict()
+        category = int(d.get('category', 1))
+        try:
+            a_list = list(Article.objects.filter(category=category).order_by('-create_time'))
+            print type(a_list)
+            for i in a_list:
+                i.content = markdown(i.content)
+            para = {'article_list': a_list}
+        except DoesNotExist:
+            para = {'article_list': None}
+        t = TemplateResponse(request, 'list.html', para)
+        return t
+    
+ 
     

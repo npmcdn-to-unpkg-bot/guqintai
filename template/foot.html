@@ -1,0 +1,45 @@
+{% load staticfiles %} 
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">古琴台 Copyright &copy;2016</p>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>       
+    <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="//v3.bootcss.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    {% if blog_post_extend_js %}
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="http://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="/static/js/jquery.ajaxfileupload.js" type="text/javascript"></script>
+        
+    <script>
+     $(document).ready(function(){
+         var simplemde = new SimpleMDE({ element: document.getElementById("my-edit-area") });
+
+         $("#demo1").AjaxFileUpload({
+                action: "/upload/",
+		onComplete: function(filename, response) {
+                    console.log('hehe');
+                    console.log(filename);
+                    $("#uploads").append(
+			$("<img />").attr("src", "http://xtuz-image.oss-cn-beijing.aliyuncs.com/guqintai/"+ filename).attr("width", 200)
+		    );
+		}
+         });
+     });
+
+
+
+    </script>
+    {% endif %}
+  </body>
+</html>

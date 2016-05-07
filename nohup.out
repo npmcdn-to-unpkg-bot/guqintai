@@ -1,0 +1,253 @@
+[07/May/2016 05:49:16] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 05:49:16] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /blog/blog.css
+Not Found: /assets/css/ie10-viewport-bug-workaround.css
+Not Found: /assets/js/ie-emulation-modes-warning.js
+Not Found: /dist/js/bootstrap.min.js
+[07/May/2016 05:49:16] "GET /blog/blog.css HTTP/1.1" 404 2366
+Not Found: /assets/js/ie10-viewport-bug-workaround.js
+[07/May/2016 05:49:16] "GET /assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 404 2249
+[07/May/2016 05:49:16] "GET /assets/js/ie-emulation-modes-warning.js HTTP/1.1" 404 2237
+[07/May/2016 05:49:16] "GET /dist/js/bootstrap.min.js HTTP/1.1" 404 2192
+[07/May/2016 05:49:16] "GET /assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 404 2243
+Not Found: /assets/css/ie10-viewport-bug-workaround.css
+Not Found: /blog/blog.css
+[07/May/2016 05:49:29] "GET /assets/css/ie10-viewport-bug-workaround.css HTTP/1.1" 404 2249
+[07/May/2016 05:49:29] "GET /blog/blog.css HTTP/1.1" 404 2366
+[07/May/2016 05:57:03] "GET /blog/ HTTP/1.1" 200 9877
+[07/May/2016 05:57:03] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /assets/js/ie-emulation-modes-warning.js
+[07/May/2016 05:57:03] "GET /assets/js/ie-emulation-modes-warning.js HTTP/1.1" 404 2237
+Not Found: /assets/js/ie10-viewport-bug-workaround.js
+Not Found: /dist/js/bootstrap.min.js
+[07/May/2016 05:57:03] "GET /dist/js/bootstrap.min.js HTTP/1.1" 404 2192
+[07/May/2016 05:57:03] "GET /assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 404 2243
+[07/May/2016 05:58:33] "GET /blog/ HTTP/1.1" 200 9888
+[07/May/2016 05:58:33] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /assets/js/ie10-viewport-bug-workaround.js
+Not Found: /dist/js/bootstrap.min.js
+[07/May/2016 05:58:33] "GET /assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 404 2243
+[07/May/2016 05:58:33] "GET /dist/js/bootstrap.min.js HTTP/1.1" 404 2192
+[07/May/2016 05:59:46] "GET /blog/ HTTP/1.1" 200 9782
+[07/May/2016 05:59:46] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /assets/js/ie10-viewport-bug-workaround.js
+[07/May/2016 05:59:46] "GET /assets/js/ie10-viewport-bug-workaround.js HTTP/1.1" 404 2243
+[07/May/2016 06:00:25] "GET /blog/ HTTP/1.1" 200 9793
+[07/May/2016 06:00:25] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:02:26] "GET /account/login HTTP/1.1" 200 2941
+[07/May/2016 06:02:26] "GET /static/img/logo2.png HTTP/1.1" 404 1657
+[07/May/2016 06:03:35] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 06:03:35] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:04:35] "GET /blog/post HTTP/1.1" 302 0
+Not Found: /account/login/
+[07/May/2016 06:04:36] "GET /account/login/ HTTP/1.1" 404 2380
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 07, 2016 - 05:49:15
+Django version 1.9.6, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 07, 2016 - 06:05:08
+Django version 1.9.6, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 07, 2016 - 06:05:11
+Django version 1.9.6, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[07/May/2016 06:05:36] "GET /blog/post HTTP/1.1" 302 0
+[07/May/2016 06:05:37] "GET /account/login HTTP/1.1" 200 2941
+[07/May/2016 06:05:37] "GET /static/img/logo2.png HTTP/1.1" 404 1657
+[07/May/2016 06:06:29] "GET /account/login HTTP/1.1" 200 3774
+[07/May/2016 06:06:29] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:06:29] "GET /static/img/logo2.png HTTP/1.1" 404 1657
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 06:06:56] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.5212818546198023 HTTP/1.1" 404 1736
+[07/May/2016 06:07:08] "GET /account/login HTTP/1.1" 200 3420
+[07/May/2016 06:07:08] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 06:07:10] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.5078467797089995 HTTP/1.1" 404 1736
+[07/May/2016 06:07:21] "POST /account/login HTTP/1.1" 200 3558
+[07/May/2016 06:07:37] "POST /account/login HTTP/1.1" 302 0
+Not Found: /
+[07/May/2016 06:07:37] "GET / HTTP/1.1" 404 2120
+[07/May/2016 06:08:17] "GET /blog/post HTTP/1.1" 200 6207
+[07/May/2016 06:08:31] "GET /blog/post HTTP/1.1" 200 6207
+[07/May/2016 06:08:31] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:08:39] "GET /blog/post HTTP/1.1" 200 6207
+[07/May/2016 06:08:39] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:08:45] "GET /blog/post HTTP/1.1" 200 6207
+[07/May/2016 06:08:45] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:09:43] "GET /blog/post HTTP/1.1" 200 6104
+[07/May/2016 06:09:43] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 06:10:16] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.2092752717743833 HTTP/1.1" 404 1736
+[07/May/2016 06:10:24] "GET /blog/post HTTP/1.1" 200 6022
+[07/May/2016 06:10:24] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:11:00] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:11:00] "GET /static/css/main.css HTTP/1.1" 304 0
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 06:11:05] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.7651193372822466 HTTP/1.1" 404 1736
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 06:11:07] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.2533626952164236 HTTP/1.1" 404 1736
+[07/May/2016 06:11:53] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:11:53] "GET /static/css/main.css HTTP/1.1" 200 2505
+[07/May/2016 06:11:54] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:11:54] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:12:06] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:12:06] "GET /static/css/main.css HTTP/1.1" 200 2500
+[07/May/2016 06:12:22] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:12:23] "GET /static/css/main.css HTTP/1.1" 200 2503
+[07/May/2016 06:12:54] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:12:54] "GET /static/css/main.css HTTP/1.1" 200 2500
+[07/May/2016 06:12:59] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:12:59] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:13:16] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:13:16] "GET /static/css/main.css HTTP/1.1" 200 2499
+[07/May/2016 06:13:33] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:13:34] "GET /static/css/main.css HTTP/1.1" 200 2504
+[07/May/2016 06:13:46] "GET /blog HTTP/1.1" 301 0
+[07/May/2016 06:13:46] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 06:13:46] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:14:15] "GET /blog/post HTTP/1.1" 200 6019
+[07/May/2016 06:14:15] "GET /static/css/main.css HTTP/1.1" 200 2504
+[07/May/2016 06:14:46] "GET /blog/post HTTP/1.1" 200 6044
+[07/May/2016 06:14:46] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:15:32] "GET /blog/post HTTP/1.1" 200 5827
+[07/May/2016 06:15:32] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:16:02] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 06:16:02] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:16:07] "GET /blog/post HTTP/1.1" 200 5828
+[07/May/2016 06:16:41] "GET /blog/post HTTP/1.1" 200 5828
+[07/May/2016 06:16:41] "GET /static/css/main.css HTTP/1.1" 200 2500
+[07/May/2016 06:17:03] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 06:17:04] "GET /static/css/main.css HTTP/1.1" 200 2504
+[07/May/2016 06:18:03] "GET /blog/post HTTP/1.1" 200 4628
+[07/May/2016 06:18:03] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:18:39] "GET /blog/post HTTP/1.1" 200 4627
+[07/May/2016 06:18:39] "GET /static/css/main.css HTTP/1.1" 200 2500
+[07/May/2016 06:21:28] "GET /blog/post HTTP/1.1" 200 4627
+[07/May/2016 06:21:28] "GET /static/css/main.css HTTP/1.1" 200 2523
+[07/May/2016 06:21:34] "GET /blog/post HTTP/1.1" 200 4627
+[07/May/2016 06:21:34] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:22:10] "GET /blog/post HTTP/1.1" 200 4627
+[07/May/2016 06:22:10] "GET /static/css/main.css HTTP/1.1" 200 2525
+[07/May/2016 06:22:52] "GET /blog/post HTTP/1.1" 200 4626
+[07/May/2016 06:22:52] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:23:02] "GET /blog/post HTTP/1.1" 200 4626
+[07/May/2016 06:23:02] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:23:42] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 06:23:42] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:24:02] "GET /blog/ HTTP/1.1" 200 9787
+[07/May/2016 06:24:02] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:24:05] "GET /blog/post HTTP/1.1" 200 4625
+[07/May/2016 06:30:26] "GET /blog/post HTTP/1.1" 200 4971
+[07/May/2016 06:30:26] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:30:53] "GET /blog/post HTTP/1.1" 200 4971
+[07/May/2016 06:30:53] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:32:23] "GET /blog/post HTTP/1.1" 200 5065
+[07/May/2016 06:32:23] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:33:06] "GET /blog/post HTTP/1.1" 200 5065
+[07/May/2016 06:33:06] "GET /blog/post HTTP/1.1" 200 5065
+[07/May/2016 06:34:46] "GET /blog/post HTTP/1.1" 200 5049
+[07/May/2016 06:34:46] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:37:34] "GET /blog/post HTTP/1.1" 200 5230
+[07/May/2016 06:37:35] "GET /static/css/main.css HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 07, 2016 - 06:05:30
+Django version 1.9.6, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 07, 2016 - 06:40:13
+Django version 1.9.6, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[07/May/2016 06:41:08] "GET /blog/post HTTP/1.1" 200 5314
+[07/May/2016 06:41:08] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:41:08] "GET /static/js/ajaxfileupload.js HTTP/1.1" 404 1678
+[07/May/2016 06:44:27] "GET /blog/post HTTP/1.1" 200 6623
+[07/May/2016 06:44:27] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:44:27] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+[07/May/2016 06:49:27] "GET /blog/post HTTP/1.1" 200 6623
+[07/May/2016 06:49:27] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:49:27] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+[07/May/2016 06:50:17] "GET /blog/post HTTP/1.1" 200 6643
+[07/May/2016 06:50:17] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+[07/May/2016 06:50:17] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:52:44] "GET /blog/post HTTP/1.1" 200 5516
+[07/May/2016 06:52:45] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:52:45] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /blog/upload.php
+[07/May/2016 06:52:51] "POST /blog/upload.php HTTP/1.1" 404 2373
+[07/May/2016 06:53:29] "GET /blog/post HTTP/1.1" 200 5525
+[07/May/2016 06:53:29] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:53:29] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /blog/upload.php
+[07/May/2016 06:53:45] "POST /blog/upload.php HTTP/1.1" 404 2373
+[07/May/2016 06:54:38] "GET /blog/post HTTP/1.1" 200 5533
+[07/May/2016 06:54:38] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:54:38] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /blog/upload.php
+[07/May/2016 06:54:45] "POST /blog/upload.php HTTP/1.1" 404 2373
+[07/May/2016 06:55:10] "GET /blog/post HTTP/1.1" 200 5538
+[07/May/2016 06:55:10] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 06:55:10] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /blog/upload.php
+[07/May/2016 06:55:17] "POST /blog/upload.php HTTP/1.1" 404 2373
+Not Found: /blog/upload.php
+[07/May/2016 06:55:17] "POST /blog/upload.php HTTP/1.1" 404 2373
+Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[07/May/2016 07:06:17] "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1" 404 1729
+Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[07/May/2016 07:06:18] "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1" 404 1729
+Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[07/May/2016 07:06:20] "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1" 404 1729
+Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[07/May/2016 07:06:25] "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1" 404 1729
+Not Found: /http:/www.baidu.com/cache/global/img/gs.gif
+[07/May/2016 07:06:33] "GET http://www.baidu.com/cache/global/img/gs.gif HTTP/1.1" 404 1729
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 07:17:37] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.5090495059944831 HTTP/1.1" 404 1736
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 07:17:44] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.6064208547996176 HTTP/1.1" 404 1736
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 07:18:08] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.1456097295543210 HTTP/1.1" 404 1736
+[07/May/2016 08:27:41] "GET /blog/post HTTP/1.1" 200 6639
+[07/May/2016 08:27:41] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 08:27:41] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 08:28:52] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.6477262761024838 HTTP/1.1" 404 1736
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 08:29:22] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.0927398537493568 HTTP/1.1" 404 1736
+Not Found: /http:/zc.qq.com/cgi-bin/common/attr
+[07/May/2016 08:29:25] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.2010057717136277 HTTP/1.1" 404 1736
+[07/May/2016 08:31:21] "GET /blog/post HTTP/1.1" 200 5521
+[07/May/2016 08:31:21] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 08:31:21] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /blog/upload.php
+[07/May/2016 08:31:27] "POST /blog/upload.php HTTP/1.1" 404 2373
+[07/May/2016 08:32:36] "GET /blog/post HTTP/1.1" 200 5556
+[07/May/2016 08:32:36] "GET /static/css/main.css HTTP/1.1" 304 0
+[07/May/2016 08:32:36] "GET /static/js/jquery.ajaxfileupload.js HTTP/1.1" 304 0
+Not Found: /upload
+[07/May/2016 08:32:42] "POST /upload HTTP/1.1" 404 2139
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 07, 2016 - 06:43:43
+Django version 1.9.6, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+Killed

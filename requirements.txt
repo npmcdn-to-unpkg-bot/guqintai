@@ -2,3 +2,5 @@ gunicorn==19.4.5
 gevent==1.1.0
 mongoengine==0.10.6
 git+https://github.com/MongoEngine/django-mongoengine.git@master
+oss2==2.1.1
+Markdown==2.6.6
