@@ -251,3 +251,192 @@ Django version 1.9.6, using settings 'web.settings'
 Starting development server at http://0.0.0.0:8080/
 Quit the server with CONTROL-C.
 Killed
+[08/May/2016 04:18:00] "GET / HTTP/1.1" 200 9841
+[08/May/2016 04:18:00] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:20:05] "GET / HTTP/1.1" 200 9269
+[08/May/2016 04:20:06] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:21:19] "GET / HTTP/1.1" 200 4129
+[08/May/2016 04:21:19] "GET /static/css/main.css HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 04:17:57
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 04:22:12] "GET / HTTP/1.1" 500 84195
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 04:21:51
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 04:22:40] "GET / HTTP/1.1" 200 5494
+[08/May/2016 04:22:40] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:23:26] "GET / HTTP/1.1" 200 5494
+[08/May/2016 04:23:26] "GET /static/css/main.css HTTP/1.1" 200 2715
+[08/May/2016 04:24:27] "GET /blog/article/572e9f1a8efa9519a17440c0/ HTTP/1.1" 200 4111
+[08/May/2016 04:24:27] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:24:36] "GET /blog/article/572de2578efa9510cdfc44a2/ HTTP/1.1" 200 4131
+[08/May/2016 04:24:36] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:25:54] "GET / HTTP/1.1" 200 5494
+[08/May/2016 04:25:54] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:25:58] "GET / HTTP/1.1" 200 5494
+[08/May/2016 04:25:58] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:28:34] "GET / HTTP/1.1" 200 5562
+[08/May/2016 04:28:34] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:28:36] "GET /blog/list/?category=1 HTTP/1.1" 200 5393
+[08/May/2016 04:28:37] "GET /blog/list/?category=2 HTTP/1.1" 200 4028
+[08/May/2016 04:28:39] "GET /blog/list/?category=3 HTTP/1.1" 200 4028
+[08/May/2016 04:28:40] "GET /blog/list/?category=2 HTTP/1.1" 200 4028
+[08/May/2016 04:28:42] "GET /blog/list/?category=2 HTTP/1.1" 200 4028
+[08/May/2016 04:28:43] "GET /blog/list/?category=1 HTTP/1.1" 200 5393
+[08/May/2016 04:28:45] "GET /blog/list/?category=1 HTTP/1.1" 200 5393
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 04:22:36
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 04:33:43] "GET /blog/list/?category=1 HTTP/1.1" 500 80884
+[08/May/2016 04:34:10] "GET /blog/list/?category=1 HTTP/1.1" 500 80884
+[08/May/2016 04:34:56] "GET /blog/list/?category=1 HTTP/1.1" 200 5397
+[08/May/2016 04:34:56] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:35:01] "GET / HTTP/1.1" 200 5573
+[08/May/2016 04:35:03] "GET /blog/list/?category=1 HTTP/1.1" 200 5397
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 04:33:33
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 04:37:01] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.7125043087418358 HTTP/1.1" 404 1736
+[08/May/2016 04:37:07] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.5459787625825876 HTTP/1.1" 404 1736
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 04:35:22
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 04:37:13] "GET /blog/list/?category=1 HTTP/1.1" 500 172064
+[08/May/2016 04:37:28] "GET /blog/list/?category=1 HTTP/1.1" 500 172091
+[08/May/2016 04:39:18] "GET /blog/list/?category=1 HTTP/1.1" 500 172383
+[08/May/2016 04:40:40] "GET /blog/list/?category=1 HTTP/1.1" 200 5395
+[08/May/2016 04:40:40] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:40:50] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:40:50] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:40:52] "GET /blog/list/?category=2 HTTP/1.1" 200 4030
+[08/May/2016 04:40:54] "GET /blog/list/?category=2 HTTP/1.1" 200 4030
+[08/May/2016 04:40:55] "GET /blog/list/?category=2 HTTP/1.1" 200 4030
+[08/May/2016 04:41:19] "GET /blog/list/?category=2 HTTP/1.1" 200 4037
+[08/May/2016 04:41:19] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:41:20] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:41:21] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:41:22] "GET /blog/list/?category=2 HTTP/1.1" 200 4037
+[08/May/2016 04:41:25] "GET /blog/list/?category=3 HTTP/1.1" 200 4037
+[08/May/2016 04:41:26] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:41:29] "GET /blog/article/572e9f1a8efa9519a17440c0/ HTTP/1.1" 200 4181
+[08/May/2016 04:41:31] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:41:38] "GET /blog/article/572de2578efa9510cdfc44a2/ HTTP/1.1" 200 4201
+[08/May/2016 04:41:47] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:41:49] "GET /blog/article/572ea4318efa951b6cfbd5be/ HTTP/1.1" 200 4087
+[08/May/2016 04:42:11] "GET /blog/article/572de2578efa9510cdfc44a2/ HTTP/1.1" 200 4201
+[08/May/2016 04:42:16] "GET /blog/article/572e9f1a8efa9519a17440c0/ HTTP/1.1" 200 4181
+[08/May/2016 04:42:23] "GET /blog/article/572ea4318efa951b6cfbd5be/ HTTP/1.1" 200 4087
+[08/May/2016 04:42:29] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:42:30] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:42:32] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:42:34] "GET /blog/article/572ea4318efa951b6cfbd5be/ HTTP/1.1" 200 4087
+[08/May/2016 04:42:38] "GET /blog/list/?category=3 HTTP/1.1" 200 4037
+[08/May/2016 04:42:40] "GET /blog/list/?category=2 HTTP/1.1" 200 4037
+[08/May/2016 04:42:41] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:42:42] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:42:43] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:42:52] "GET /blog/article/572e9f1a8efa9519a17440c0/ HTTP/1.1" 200 4181
+[08/May/2016 04:43:03] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:43:06] "GET /blog/article/572e9f1a8efa9519a17440c0/ HTTP/1.1" 200 4181
+[08/May/2016 04:43:08] "GET / HTTP/1.1" 200 5571
+[08/May/2016 04:43:08] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 04:43:20] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 04:43:21] "GET / HTTP/1.1" 200 5571
+[08/May/2016 05:17:32] "GET / HTTP/1.1" 200 5571
+[08/May/2016 05:48:02] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.0649772642498260 HTTP/1.1" 404 1736
+[08/May/2016 05:48:09] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.6866941555184983 HTTP/1.1" 404 1736
+[08/May/2016 05:48:34] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.3624875882982036 HTTP/1.1" 404 1736
+[08/May/2016 06:41:00] "GET /manager/html HTTP/1.1" 404 2366
+[08/May/2016 06:59:11] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.1121593889119475 HTTP/1.1" 404 1736
+[08/May/2016 06:59:17] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.8694709997030400 HTTP/1.1" 404 1736
+[08/May/2016 06:59:25] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.2634682134710434 HTTP/1.1" 404 1736
+[08/May/2016 06:59:41] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.3761641181505170 HTTP/1.1" 404 1736
+[08/May/2016 08:10:38] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.3547025060924641 HTTP/1.1" 404 1736
+[08/May/2016 08:11:02] "GET http://zc.qq.com/cgi-bin/common/attr?id=260714&r=0.0149674203979682 HTTP/1.1" 404 1736
+[08/May/2016 08:14:08] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+[08/May/2016 08:14:08] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 08:14:09] "GET /blog/list/?category=2 HTTP/1.1" 200 4037
+[08/May/2016 08:14:11] "GET /blog/list/?category=3 HTTP/1.1" 200 4037
+[08/May/2016 08:14:12] "GET /about HTTP/1.1" 404 2345
+[08/May/2016 08:14:15] "GET / HTTP/1.1" 200 5571
+[08/May/2016 08:16:09] "GET /?page=1 HTTP/1.1" 200 5571
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 04:37:09
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 08:23:07] "GET /?page=1 HTTP/1.1" 200 5571
+[08/May/2016 08:23:07] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 08:23:10] "GET /blog/list/?category=1 HTTP/1.1" 200 5403
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 08:20:09
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 08:23:58] "GET /blog/list/?category=1 HTTP/1.1" 200 4345
+[08/May/2016 08:23:58] "GET /static/css/main.css HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 08:23:40
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 08:27:17] "GET /blog/list/?category=1 HTTP/1.1" 200 4365
+[08/May/2016 08:27:21] "GET /blog/list/?page_num=2 HTTP/1.1" 200 4057
+[08/May/2016 08:27:29] "GET /blog/list/?page_num=2 HTTP/1.1" 200 4057
+[08/May/2016 08:27:50] "GET /blog/list/?page_num=2 HTTP/1.1" 200 4057
+[08/May/2016 08:27:52] "GET /blog/list/?page_num=2 HTTP/1.1" 200 4057
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 08:24:05
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 08:32:58] "GET /blog/list/?page_num=2 HTTP/1.1" 500 80960
+[08/May/2016 08:33:09] "GET /blog/list/?page_num=2 HTTP/1.1" 500 86771
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 08:30:42
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+[08/May/2016 08:33:40] "GET /blog/list/?page_num=2 HTTP/1.1" 200 4057
+[08/May/2016 08:33:40] "GET /static/css/main.css HTTP/1.1" 304 0
+[08/May/2016 08:33:43] "GET /blog/list/?page_num=2 HTTP/1.1" 200 4057
+[08/May/2016 08:33:47] "GET /blog/list/?page_num=1 HTTP/1.1" 200 4057
+Performing system checks...
+
+System check identified no issues (0 silenced).
+May 08, 2016 - 08:33:27
+Django version 1.8.4, using settings 'web.settings'
+Starting development server at http://0.0.0.0:8080/
+Quit the server with CONTROL-C.
+Killed

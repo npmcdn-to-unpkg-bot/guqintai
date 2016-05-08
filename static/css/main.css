@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #555;
   background-color: #C7EDCC;
   margin-bottom: 60px;
@@ -146,12 +146,22 @@ h6, .h6 {
  */
 
 .blog-post {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+
 }
 .blog-post-title {
   margin-bottom: 5px;
-  font-size: 30px;
+  font-size: 20px;
 }
+.blog-post-title > a {
+  font-weight: 500;
+  color: #222;
+}
+
+
 .blog-post-meta {
   margin-bottom: 15px;
   color: #999;

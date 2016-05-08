@@ -1,0 +1,26 @@
+{% load markdown_deux_tags %}
+{% include "head.html" %}
+
+   <div class="container" style="margin-top:30px">
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+          <div class="blog-post">
+            <h2 class="blog-post-title">{{article.title}}</h2>
+            <p class="blog-post-meta">{{article.create_time}}<a href="#">{{article.username}}</a></p>
+            {{article.content |markdown | safe}}
+          </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            {% include "side_about.html" %}
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+{% include "foot.html" %}
+
+

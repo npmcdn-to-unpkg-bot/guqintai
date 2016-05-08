@@ -12,7 +12,37 @@ from markdown import markdown
 class Index(TemplateView):
 
     def get(self, request, *args, **kwargs):
+        d = request.GET.dict()
         para = {}
+        page_num = int(d.get('page_num', 1))
+        if page_num < 1:
+            page_num = 1 
+ 
+        try:
+            item_num = 10
+           
+            page_start = (page_num -1 )* item_num
+            page_end = page_num * item_num 
+
+            total_num = Article.objects.count()  
+            
+            last_page = max(0, page_num-1)
+            total_page = (total_num/item_num)+ 1
+            end_page = total_page 
+            next_page = min(end_page, page_num+1)
+
+            a_list = list(Article.objects.order_by('-create_time')[page_start:page_end])
+            for i in a_list:
+                i.content = markdown(i.content)
+            para.update({"page_num": page_num,
+                     "last_page": last_page,
+                     "next_page": next_page,
+                     'end_page': end_page,
+                     'total_page': total_page,
+                     'article_list': a_list})
+        except DoesNotExist:
+            para = {'article_list': None}
+        para.update({'index_page':True})
         t = TemplateResponse(request, 'index.html', para)
         return t
     
@@ -49,16 +79,55 @@ class List(TemplateView):
 
     def get(self, request, *args, **kwargs):
         d = request.GET.dict()
-        category = int(d.get('category', 1))
+        category = int(d.get('category', 3))
+        page_num = int(d.get('page_num', 1))
+        if page_num < 1:
+            page_num = 1 
+        
+
         try:
-            a_list = list(Article.objects.filter(category=category).order_by('-create_time'))
-            print type(a_list)
+            item_num = 10
+           
+            page_start = (page_num -1 )* item_num
+            page_end = page_num * item_num 
+
+            total_num = Article.objects.filter(category=category).count()  
+            
+            last_page = max(0, page_num-1)
+            total_page = (total_num/item_num)+ 1
+            end_page = total_page 
+            next_page = min(end_page, page_num+1)
+
+
+            a_list = list(Article.objects.filter(category=category).order_by('-create_time'))[page_start:page_end]
+
             for i in a_list:
                 i.content = markdown(i.content)
             para = {'article_list': a_list}
+            para.update({'category':category,
+                     "page_num": page_num,
+                     "last_page": last_page,
+                     "next_page": next_page,
+                     'end_page': end_page,
+                     'total_page': total_page,})
+
         except DoesNotExist:
             para = {'article_list': None}
+
         t = TemplateResponse(request, 'list.html', para)
+        return t
+    
+ 
+class Detail(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        article_id = kwargs['id']
+        try:
+            a = Article.objects.get(id=article_id)
+            para = {'article': a}
+        except DoesNotExist:
+            para = {'article': None}
+        t = TemplateResponse(request, 'detail.html', para)
         return t
     
  

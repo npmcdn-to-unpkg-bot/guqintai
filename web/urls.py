@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from blog import views as View
 
 urlpatterns = [
+    url(r'^$', View.Index.as_view()),       
     url(r'^upload/', include('upload.urls')),       
     url(r'^blog/', include('blog.urls')),       
     url(r'^account/', include('account.urls')),            
