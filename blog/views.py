@@ -1,9 +1,12 @@
+#coding=utf8
 from django.views.generic import TemplateView
 from django.template.response import TemplateResponse
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse, HttpResponseForbidden
+from datetime import datetime
 
 from mongoengine import DoesNotExist
+from mongoengine.queryset.visitor import Q
 from models import Article
 
 from markdown import markdown 
@@ -131,4 +134,46 @@ class Detail(TemplateView):
         return t
     
  
-    
+class Archive(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        year = int(kwargs['id'])
+        d = request.GET.dict()
+        page_num = int(d.get('page_num', 1))
+        if page_num < 1:
+            page_num = 1 
+        
+
+        try:
+            item_num = 2
+           
+            page_start = (page_num -1 )* item_num
+            page_end = page_num * item_num 
+
+            start = datetime(year, 1, 1)
+            end = datetime(year, 12, 31)
+            
+            total_num = Article.objects(Q(create_time__gte=start) & Q(create_time__lte=end)).count()  
+            last_page = max(0, page_num-1)
+            total_page = (total_num/item_num)+ 1
+            end_page = total_page 
+            next_page = min(end_page, page_num+1)
+
+
+            a_list = list(Article.objects(Q(create_time__gte=start)& Q(create_time__lte=end)).order_by('-create_time'))[page_start:page_end]
+
+            for i in a_list:
+                i.content = markdown(i.content)
+            para = {'article_list': a_list}
+            para.update({"page_num": page_num,
+                     "last_page": last_page,
+                     "next_page": next_page,
+                     'end_page': end_page,
+                     'total_page': total_page,})
+
+        except DoesNotExist:
+            para = {'article_list': None}
+
+        t = TemplateResponse(request, 'list.html', para)
+        return t
+ 

@@ -3,10 +3,19 @@
             <h4>作者</h4>
             <p><strong><em>Willie</em></strong> 一个从SZ回到WH的码农，资深IT人士，有多年项目管理经验和技术研发经验</p>
           </div>
+          {% if request.session.account_id %}
+          <div class="sidebar-module">
+            <h4>内容管理</h4>
+            <ol class="list-unstyled">
+              <li><a href="/blog/post">发布</a></li>
+              <li><a href="/blog/admin">管理</a></li>
+            </ol>
+          </div>
+          {% endif %} 
           <div class="sidebar-module">
             <h4>归档</h4>
             <ol class="list-unstyled">
-              <li><a href="#">2016</a></li>
+              <li><a href="/blog/archive/2016/">2016</a></li>
             </ol>
           </div>
           <div class="sidebar-module">

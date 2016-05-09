@@ -6,4 +6,7 @@ urlpatterns = [
     url('^post', View.Post.as_view()),
     url('^list/', View.List.as_view()),
     url('^article/(?P<id>\w+)/', View.Detail.as_view()),
+    url('^archive/(?P<id>\d+)/$', View.Archive.as_view()),
+
+
 ]
