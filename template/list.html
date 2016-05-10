@@ -10,6 +10,9 @@
             <h2 class="blog-post-title"><a href="/blog/article/{{i.id}}/">{{i.title}}</a></h2>
             <p class="blog-post-meta">{{i.create_time}}<a href="#">{{i.username}}</a></p>
             {{i.content |striptags| safe | truncatechars:50}}
+            {% if request.session.account_id %}
+            <p class="blog-post-meta"><a href="/blog/edit/{{i.id}}/">编辑</a>&nbsp&nbsp<a href="#">删除</a> </p>
+            {% endif %}
           </div><!-- /.blog-post -->
           <hr>
           {% endfor %}

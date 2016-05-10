@@ -64,12 +64,14 @@ class Post(TemplateView):
         if request.session.get('account_id', None) is None:
             return HttpResponseRedirect('/account/login')
 
-        d = request.POST
+        d = request.POST.dict()
         i = Article()
         account_id = request.session['account_id']
         i.account_id = str(account_id)
         i.username = request.session['username']
-    
+       
+        tag = d.get('tag', None)   
+        i.tag = tag.split(';')
         i.category = int(d['category'])
         i.head_image = d.get('head_image', None)
         i.title = d['title']
@@ -77,6 +79,43 @@ class Post(TemplateView):
         i.save()
 
         return HttpResponseRedirect('/blog')
+
+class Edit(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if request.session.get('account_id', None) is None:
+            return HttpResponseRedirect('/account/login')
+        article_id = kwargs['id']
+        try:
+            a = Article.objects.get(id=article_id)
+            kwargs['article'] = a
+        except DoesNotExist:
+            pass
+        t = TemplateResponse(request, 'post.html', kwargs)
+        return t
+    
+    
+    def post(self, request, *args, **kwargs):
+        if request.session.get('account_id', None) is None:
+            return HttpResponseRedirect('/account/login')
+
+        article_id = kwargs['id']
+        try:
+            i = Article.objects.get(id=article_id)
+            d = request.POST.dict()
+       
+            tag = d.get('tag', None)   
+            i.tag = tag.split(';')
+            i.category = int(d['category'])
+            i.head_image = d.get('head_image', None)
+            i.title = d['title']
+            i.content = d['content'] 
+            i.save()
+        except DoesNotExist:
+            pass
+
+        return HttpResponseRedirect('/blog')
+
 
 class List(TemplateView):
 
@@ -127,6 +166,8 @@ class Detail(TemplateView):
         article_id = kwargs['id']
         try:
             a = Article.objects.get(id=article_id)
+            a.content = markdown(a.content)
+
             para = {'article': a}
         except DoesNotExist:
             para = {'article': None}

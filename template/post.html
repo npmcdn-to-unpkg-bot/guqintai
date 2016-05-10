@@ -9,30 +9,36 @@
 
                 <div class="form-group">
                     <label for="title">标题</label>
-                    <input type="text" class="form-control" id="title" name="title" required="required">
+                    <input type="text" class="form-control" id="title" name="title" required="required" {%if article %}value={{article.title}}{% endif %}>
                 </div>
 
                 <div class="form-group">
                     <label for="head_image">主图地址</label>
-                    <input type="text" class="form-control" id="head_image" name="head_image" placeholder="图床地址">
+                    <input type="text" class="form-control" id="head_image" name="head_image" placeholder="图床地址" {%if article %}value={{article.head_image}}{% endif %}>
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-control" rows="15" name="content" id="my-edit-area"></textarea>
+                    <textarea class="form-control" rows="15" name="content" id="my-edit-area">{%if article %}{{article.content}}{% endif %}</textarea>
                 </div>
+
+                <div class="form-group">
+                    <label for="title">标签</label>
+                    <input type="text" class="form-control" id="tag" name="tag" required="required" {%if article %}value={%for i in article.tag%}{{i}};{% endfor %}{% endif %}>
+                </div>
+
 
 
                 <div class="form-group">
                     <label>类目</label>
                     <br>
                     <label class="radio-inline">
-                        <input type="radio" name="category" id="inlineRadio1" value="1"> 技术
+                        <input type="radio" name="category" id="inlineRadio1" value="1" {%if article %}{% if article.category == 1 %}checked{% endif %}{% endif %}> 技术
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="category" id="inlineRadio2" value="2"> 人物
+                        <input type="radio" name="category" id="inlineRadio2" value="2" {%if article %}{% if article.category == 2 %}checked{% endif %}{% endif %}> 人物
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="category" id="inlineRadio3" value="3" checked> 随笔
+                        <input type="radio" name="category" id="inlineRadio3" value="3" {%if article %}{% if article.category == 3 %}checked{% endif %}{% else %}checked{% endif %}> 随笔
                     </label>
 
                 </div>
