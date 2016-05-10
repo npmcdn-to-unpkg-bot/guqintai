@@ -11,7 +11,7 @@
             <p class="blog-post-meta">{{i.create_time}}<a href="#">{{i.username}}</a></p>
             {{i.content |striptags| safe | truncatechars:50}}
             {% if request.session.account_id %}
-            <p class="blog-post-meta"><a href="/blog/edit/{{i.id}}/">编辑</a>&nbsp&nbsp<a href="#">删除</a> </p>
+            <p class="blog-post-meta"><a href="/blog/edit/{{i.id}}/">编辑</a>&nbsp&nbsp<a href="/blog/delete/{{i.id}}">删除</a> </p>
             {% endif %}
           </div><!-- /.blog-post -->
           <hr>

@@ -13,7 +13,7 @@ class Article(mongoengine.Document):
     title = StringField()
     head_image = StringField()
     content = StringField()
-    status = IntField()
+    status = IntField(default=0)
     category =  IntField()
     tag =  ListField(StringField())
     create_time = mongoengine.DateTimeField(default=datetime.now)

@@ -34,7 +34,7 @@ class Index(TemplateView):
             end_page = total_page 
             next_page = min(end_page, page_num+1)
 
-            a_list = list(Article.objects.order_by('-create_time')[page_start:page_end])
+            a_list = list(Article.objects.filter(status=1).order_by('-create_time')[page_start:page_end])
             for i in a_list:
                 i.content = markdown(i.content)
             para.update({"page_num": page_num,
@@ -76,6 +76,7 @@ class Post(TemplateView):
         i.head_image = d.get('head_image', None)
         i.title = d['title']
         i.content = d['content'] 
+        i.status = 1
         i.save()
 
         return HttpResponseRedirect('/blog')
@@ -110,6 +111,7 @@ class Edit(TemplateView):
             i.head_image = d.get('head_image', None)
             i.title = d['title']
             i.content = d['content'] 
+            i.status = 1
             i.save()
         except DoesNotExist:
             pass
@@ -133,7 +135,7 @@ class List(TemplateView):
             page_start = (page_num -1 )* item_num
             page_end = page_num * item_num 
 
-            total_num = Article.objects.filter(category=category).count()  
+            total_num = Article.objects.filter(category=category, status=1).count()  
             
             last_page = max(0, page_num-1)
             total_page = (total_num/item_num)+ 1
@@ -141,7 +143,7 @@ class List(TemplateView):
             next_page = min(end_page, page_num+1)
 
 
-            a_list = list(Article.objects.filter(category=category).order_by('-create_time'))[page_start:page_end]
+            a_list = list(Article.objects.filter(category=category, status=1).order_by('-create_time'))[page_start:page_end]
 
             for i in a_list:
                 i.content = markdown(i.content)
@@ -194,7 +196,7 @@ class Archive(TemplateView):
             start = datetime(year, 1, 1)
             end = datetime(year, 12, 31)
             
-            total_num = Article.objects(Q(create_time__gte=start) & Q(create_time__lte=end)).count()  
+            total_num = Article.objects(Q(status=1) & Q(create_time__gte=start) & Q(create_time__lte=end)).count()  
             last_page = max(0, page_num-1)
             total_page = (total_num/item_num)+ 1
             end_page = total_page 
@@ -217,4 +219,70 @@ class Archive(TemplateView):
 
         t = TemplateResponse(request, 'list.html', para)
         return t
+
+
+class Delete(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if request.session.get('account_id', None) is None:
+            return HttpResponseRedirect('/account/login')
+        article_id = kwargs['id']
+        try:
+            a = Article.objects.get(id=article_id)
+            a.status = -1
+            a.save()
+
+        except DoesNotExist:
+            pass
+        refer = request.META.get('HTTP_REFERER', None)
+        if refer:
+            return HttpResponseRedirect(refer)
+        else:
+            return HttpResponseRedirect('/')
+
+class Admin(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if request.session.get('account_id', None) is None:
+            return HttpResponseRedirect('/account/login')
+ 
+        d = request.GET.dict()
+        category = int(d.get('category', 3))
+        page_num = int(d.get('page_num', 1))
+        if page_num < 1:
+            page_num = 1 
+        
+
+        try:
+            item_num = 10
+           
+            page_start = (page_num -1 )* item_num
+            page_end = page_num * item_num 
+
+            total_num = Article.objects.count()  
+            
+            last_page = max(0, page_num-1)
+            total_page = (total_num/item_num)+ 1
+            end_page = total_page 
+            next_page = min(end_page, page_num+1)
+
+
+            a_list = list(Article.objects.order_by('-create_time'))[page_start:page_end]
+
+            for i in a_list:
+                i.content = markdown(i.content)
+            para = {'article_list': a_list}
+            para.update({'category':category,
+                     "page_num": page_num,
+                     "last_page": last_page,
+                     "next_page": next_page,
+                     'end_page': end_page,
+                     'total_page': total_page,})
+
+        except DoesNotExist:
+            para = {'article_list': None}
+
+        t = TemplateResponse(request, 'list.html', para)
+        return t
+    
  
