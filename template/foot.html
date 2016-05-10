@@ -22,8 +22,10 @@
     <script src="/static/js/jquery.ajaxfileupload.js" type="text/javascript"></script>
         
     <script>
+     var simplemde = new SimpleMDE({ element: document.getElementById("my-edit-area") });
+     article_id = "";
+
      $(document).ready(function(){
-         var simplemde = new SimpleMDE({ element: document.getElementById("my-edit-area") });
 
          $("#demo1").AjaxFileUpload({
                 action: "/upload/",
@@ -37,6 +39,34 @@
          });
      });
 
+    function save(){
+        if (article_id != "")
+        {
+            var url = '/blog/save/'+ article_id + '/';
+        }
+        else
+        {
+            {% if article.id %}
+            var url = '/blog/save/{{article.id}}/';
+            {% else %}
+            var url = '/blog/save';
+            {% endif %}
+        }
+        
+        $.post(url,
+        {
+            title: $('#title').val(),
+            head_image: $('#head_image').val(),
+            content: simplemde.value(),
+            tag: $('#tag').val(),
+            category: $("input[name='category']:checked").val(),      
+        },
+        function(data,status){
+            article_id = data;
+            alert("Save Ok" + data + "\nStatus: " + status);
+        });
+        
+    }; 
 
 
     </script>

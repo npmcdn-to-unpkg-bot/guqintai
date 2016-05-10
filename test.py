@@ -1,3 +1,9 @@
+ss = 'abc'
+
+t = ss.split(';')[:-1]
+print t
+
+
 a = [1,2,3]
 
 for i in a:
@@ -10,3 +16,6 @@ print a
 li = [1, 9, 8, 4]
 [elem*2 for elem in li]    
 print li
+
+
+

@@ -11,34 +11,7 @@
       <div class="row">
 
         <div class="col-sm-8 blog-main">
-          {% for i in article_list  %}
-          <div class="blog-post">
-            <h2 class="blog-post-title"><a href="/blog/article/{{i.id}}/">{{i.title}}</a></h2>
-            <p class="blog-post-meta">{{i.create_time}}<a href="#">{{i.username}}</a></p>
-            {{i.content |striptags| safe | truncatechars:50}}
-          </div><!-- /.blog-post -->
-          <hr>
-          {% endfor %}
-          
-          <nav>
-            <ul class="pager">
-               {% if last_page == 0 %}
-               <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>上一页</a></li>
-               {% else %}
-               <li class="previous"><a href="{{request.path}}?page_num={{last_page}}"><span aria-hidden="true">&larr;</span>上一页</a></li>
-               {% endif%}
-
-               {% if next_page == total_page %}
-               <li class="next disabled"><a href="#">下一页<span aria-hidden="true">&rarr;</span></a></li>
-               {% else %}
-               <li class="next"><a href="{{request.path}}?page_num={{next_page}}">下一页<span aria-hidden="true">&rarr;</span></a></li>
-               {% endif%}
-
-            </ul>
-          </nav>
-
-
-
+            {% include "sub_list.html" %}
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">

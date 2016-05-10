@@ -8,7 +8,7 @@ from datetime import datetime
 from mongoengine import DoesNotExist
 from mongoengine.queryset.visitor import Q
 from models import Article
-
+import math
 from markdown import markdown 
 
 # Create your views here.
@@ -28,11 +28,9 @@ class Index(TemplateView):
             page_end = page_num * item_num 
 
             total_num = Article.objects.count()  
-            
-            last_page = max(0, page_num-1)
-            total_page = (total_num/item_num)+ 1
-            end_page = total_page 
-            next_page = min(end_page, page_num+1)
+            total_page = math.ceil(total_num*1.0/item_num)
+            last_page = page_num-1
+            next_page = page_num+1
 
             a_list = list(Article.objects.filter(status=1).order_by('-create_time')[page_start:page_end])
             for i in a_list:
@@ -40,7 +38,6 @@ class Index(TemplateView):
             para.update({"page_num": page_num,
                      "last_page": last_page,
                      "next_page": next_page,
-                     'end_page': end_page,
                      'total_page': total_page,
                      'article_list': a_list})
         except DoesNotExist:
@@ -71,7 +68,10 @@ class Post(TemplateView):
         i.username = request.session['username']
        
         tag = d.get('tag', None)   
-        i.tag = tag.split(';')
+        if tag != '':
+            if tag[-1] == ';':
+                tag = tag[:-1]
+            i.tag = tag.split(';')
         i.category = int(d['category'])
         i.head_image = d.get('head_image', None)
         i.title = d['title']
@@ -106,7 +106,10 @@ class Edit(TemplateView):
             d = request.POST.dict()
        
             tag = d.get('tag', None)   
-            i.tag = tag.split(';')
+            if tag != '':
+                if tag[-1] == ';':
+                    tag = tag[:-1]
+                i.tag = tag.split(';')
             i.category = int(d['category'])
             i.head_image = d.get('head_image', None)
             i.title = d['title']
@@ -136,12 +139,10 @@ class List(TemplateView):
             page_end = page_num * item_num 
 
             total_num = Article.objects.filter(category=category, status=1).count()  
-            
-            last_page = max(0, page_num-1)
-            total_page = (total_num/item_num)+ 1
-            end_page = total_page 
-            next_page = min(end_page, page_num+1)
-
+ 
+            total_page = math.ceil(total_num*1.0/item_num)
+            last_page = page_num-1
+            next_page = page_num+1
 
             a_list = list(Article.objects.filter(category=category, status=1).order_by('-create_time'))[page_start:page_end]
 
@@ -152,7 +153,6 @@ class List(TemplateView):
                      "page_num": page_num,
                      "last_page": last_page,
                      "next_page": next_page,
-                     'end_page': end_page,
                      'total_page': total_page,})
 
         except DoesNotExist:
@@ -170,10 +170,11 @@ class Detail(TemplateView):
             a = Article.objects.get(id=article_id)
             a.content = markdown(a.content)
 
-            para = {'article': a}
+            kwargs['article'] = a
+            kwargs['category'] = a.category
         except DoesNotExist:
-            para = {'article': None}
-        t = TemplateResponse(request, 'detail.html', para)
+            pass
+        t = TemplateResponse(request, 'detail.html', kwargs)
         return t
     
  
@@ -188,7 +189,7 @@ class Archive(TemplateView):
         
 
         try:
-            item_num = 2
+            item_num = 10
            
             page_start = (page_num -1 )* item_num
             page_end = page_num * item_num 
@@ -197,13 +198,13 @@ class Archive(TemplateView):
             end = datetime(year, 12, 31)
             
             total_num = Article.objects(Q(status=1) & Q(create_time__gte=start) & Q(create_time__lte=end)).count()  
-            last_page = max(0, page_num-1)
-            total_page = (total_num/item_num)+ 1
-            end_page = total_page 
-            next_page = min(end_page, page_num+1)
+
+            total_page = math.ceil(total_num*1.0/item_num)
+            last_page = page_num-1
+            next_page = page_num+1
 
 
-            a_list = list(Article.objects(Q(create_time__gte=start)& Q(create_time__lte=end)).order_by('-create_time'))[page_start:page_end]
+            a_list = list(Article.objects(Q(status=1) & Q(create_time__gte=start)& Q(create_time__lte=end)).order_by('-create_time'))[page_start:page_end]
 
             for i in a_list:
                 i.content = markdown(i.content)
@@ -211,7 +212,6 @@ class Archive(TemplateView):
             para.update({"page_num": page_num,
                      "last_page": last_page,
                      "next_page": next_page,
-                     'end_page': end_page,
                      'total_page': total_page,})
 
         except DoesNotExist:
@@ -247,11 +247,9 @@ class Admin(TemplateView):
             return HttpResponseRedirect('/account/login')
  
         d = request.GET.dict()
-        category = int(d.get('category', 3))
         page_num = int(d.get('page_num', 1))
         if page_num < 1:
             page_num = 1 
-        
 
         try:
             item_num = 10
@@ -260,23 +258,18 @@ class Admin(TemplateView):
             page_end = page_num * item_num 
 
             total_num = Article.objects.count()  
-            
-            last_page = max(0, page_num-1)
-            total_page = (total_num/item_num)+ 1
-            end_page = total_page 
-            next_page = min(end_page, page_num+1)
-
+            total_page = math.ceil(total_num*1.0/item_num)
+            last_page = page_num-1
+            next_page = page_num+1
 
             a_list = list(Article.objects.order_by('-create_time'))[page_start:page_end]
 
             for i in a_list:
                 i.content = markdown(i.content)
             para = {'article_list': a_list}
-            para.update({'category':category,
-                     "page_num": page_num,
+            para.update({"page_num": page_num,
                      "last_page": last_page,
                      "next_page": next_page,
-                     'end_page': end_page,
                      'total_page': total_page,})
 
         except DoesNotExist:
@@ -285,4 +278,60 @@ class Admin(TemplateView):
         t = TemplateResponse(request, 'list.html', para)
         return t
     
- 
+class Save(TemplateView):
+
+    
+    def post(self, request, *args, **kwargs):
+        if request.session.get('account_id', None) is None:
+            return HttpResponseRedirect('/account/login')
+  
+        
+        try:
+            article_id = kwargs['id']
+            d = request.POST.dict()
+            i = Article.objects.get(id=article_id)
+            tag = d.get('tag', '')   
+            if tag != '':
+                if tag[-1] == ';':
+                    tag = tag[:-1]
+                i.tag = tag.split(';')
+            i.category = int(d['category'])
+            i.head_image = d.get('head_image', None)
+            i.title = d['title']
+            i.content = d['content'] 
+            i.status = 0
+            i.save()
+        except:
+            d = request.POST.dict()
+            i = Article(**d)
+            account_id = request.session['account_id']
+            i.account_id = str(account_id)
+            i.username = request.session['username']
+            tag = d.get('tag', None)   
+            if tag != '':
+                if tag[-1] == ';':
+                    tag = tag[:-1]
+                i.tag = tag.split(';')
+            i.status = 0
+            i.save()
+
+        return HttpResponse(i.id)
+
+class Remove(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        if request.session.get('account_id', None) is None:
+            return HttpResponseRedirect('/account/login')
+        article_id = kwargs['id']
+        try:
+            a = Article.objects.get(id=article_id)
+            a.delete()
+        except DoesNotExist:
+            pass
+        refer = request.META.get('HTTP_REFERER', None)
+        if refer:
+            return HttpResponseRedirect(refer)
+        else:
+            return HttpResponseRedirect('/')
+
+

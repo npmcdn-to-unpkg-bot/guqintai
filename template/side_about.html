@@ -5,10 +5,13 @@
           </div>
           {% if request.session.account_id %}
           <div class="sidebar-module">
-            <h4>内容管理</h4>
+            <h4>管理</h4>
             <ol class="list-unstyled">
               <li><a href="/blog/post">发布</a></li>
-              <li><a href="/blog/admin">管理</a></li>
+              <li><a href="/blog/admin">博文列表</a></li>
+              <li><a href="/account/logout">退出</a></li>
+
+
             </ol>
           </div>
           {% endif %} 

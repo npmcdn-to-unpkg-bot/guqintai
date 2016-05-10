@@ -1,0 +1,39 @@
+          {% for i in article_list  %}
+          <div class="blog-post">
+            <h2 class="blog-post-title"><a href="/blog/article/{{i.id}}/">{{i.title}}</a></h2>
+            <p class="blog-post-meta">{{i.create_time}}<a href="#">{{i.username}}</a></p>
+            {{i.content |striptags| safe | truncatechars:250}}
+            {% if request.session.account_id %}
+            <p>
+            {% if i.status == -1 %}
+               <span class="label label-danger">删除</span>
+            {% elif i.status == 0 %}
+               <span class="label label-info">未发布</span>
+            {% elif i.status == 1 %}
+               <span class="label label-success">已发布</span>
+            </p>
+            {% endif %}
+
+            <p class="blog-post-meta"><a href="/blog/edit/{{i.id}}/">编辑</a>&nbsp&nbsp<a href="/blog/delete/{{i.id}}">删除</a> &nbsp&nbsp<a href="/blog/remove/{{i.id}}">彻底删除</a> </p>
+            {% endif %}
+          </div><!-- /.blog-post -->
+          <hr>
+          {% endfor %}
+          
+          <nav>
+            <ul class="pager">
+               {% if last_page <= 0%}
+               <li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span>上一页</a></li>
+               {% else %}
+               <li class="previous"><a href="{{request.path}}?page_num={{last_page}}{% if category %}&category={{category}}{% endif %}"><span aria-hidden="true">&larr;</span>上一页</a></li>
+               {% endif%}
+
+               {% if next_page > total_page %}
+               <li class="next disabled"><a href="#">下一页<span aria-hidden="true">&rarr;</span></a></li>
+               {% else %}
+               <li class="next"><a href="{{request.path}}?page_num={{next_page}}{% if category %}&category={{category}}{% endif %}">下一页<span aria-hidden="true">&rarr;</span></a></li>
+               {% endif%}
+            </ul>
+          </nav>
+
+

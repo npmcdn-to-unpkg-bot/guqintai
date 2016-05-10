@@ -9,12 +9,12 @@
 
                 <div class="form-group">
                     <label for="title">标题</label>
-                    <input type="text" class="form-control" id="title" name="title" required="required" {%if article %}value={{article.title}}{% endif %}>
+                    <input type="text" class="form-control" id="title" name="title" required="required" {%if article %}value="{{article.title}}"{% endif %}>
                 </div>
 
                 <div class="form-group">
                     <label for="head_image">主图地址</label>
-                    <input type="text" class="form-control" id="head_image" name="head_image" placeholder="图床地址" {%if article %}value={{article.head_image}}{% endif %}>
+                    <input type="text" class="form-control" id="head_image" name="head_image" placeholder="图床地址" {%if article %}value="{{article.head_image}}"{% endif %}>
                 </div>
 
                 <div class="form-group">
@@ -23,7 +23,7 @@
 
                 <div class="form-group">
                     <label for="title">标签</label>
-                    <input type="text" class="form-control" id="tag" name="tag" required="required" {%if article %}value={%for i in article.tag%}{{i}};{% endfor %}{% endif %}>
+                    <input type="text" class="form-control" id="tag" name="tag" required="required" {%if article %}value="{%for i in article.tag%}{{i}};{% endfor %}"{% endif %}>
                 </div>
 
 
@@ -44,7 +44,7 @@
                 </div>
                 
                 <div class="form-group text-center">
-                    <button type="button" class="btn btn-success">保存</button>
+                    <button type="button" class="btn btn-success" onClick="save()">保存</button>
                     <button type="submit" class="btn btn-primary">发布</button>
                 </div>
             </form>
