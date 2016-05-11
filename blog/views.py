@@ -169,7 +169,7 @@ class Detail(TemplateView):
         try:
             a = Article.objects.get(id=article_id)
             a.content = markdown(a.content)
-
+            kwargs['title'] = a.title
             kwargs['article'] = a
             kwargs['category'] = a.category
         except DoesNotExist:
