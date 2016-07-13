@@ -142,6 +142,8 @@ STATICFILES_DIRS = [
    ("lib", os.path.join(STATIC_ROOT,'lib')),
    ("js", os.path.join(STATIC_ROOT,'js')),
    ("upload", os.path.join(STATIC_ROOT,'upload')),
+   ("image", os.path.join(STATIC_ROOT,'image')),
+
 
 
 
