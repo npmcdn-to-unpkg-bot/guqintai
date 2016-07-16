@@ -11,52 +11,19 @@
     <script src="/static/js/dropzone.js"></script>
     <link rel="stylesheet" href="/static/css/dropzone.min.css" />
     -->
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>  
 
-
-    <script type="text/javascript">  
-
-        window.onload = function(){  
-            document.getElementById('img-a').onchange = function(){  
-                console.log('hehe1');
-        
-                var img = event.target.files[0];  
-  
-                // 判断是否图片  
-                if(!img){  
-                    return ;  
-                }  
-                console.log('hehe2');
-  
-                // 判断图片格式  
-                if(!(img.type.indexOf('image')==0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name)) ){  
-                    alert('图片只能是jpg,gif,png');  
-                    return ;  
-                }  
-                console.log('hehe3');
-  
-                var reader = new FileReader();  
-                reader.readAsDataURL(img);  
- 
-                reader.onload = function(e){ // reader onload start  
-                    var ss = '<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)></li>';
-                    $("#img-thumb-0").append('<li class="weui_uploader_file" style="background-image:url('+e.target.result+')" ></li>');
- 
-                }; 
-            };
-        }  
-  </script>  
- 
 
 </head>
+
 <body>
     <div class="weui_tab">
         <div class="weui_tab_bd">
             <div class="bd">
+                <ul id="content">
+                <li seq="0">
+
                 <div class="weui_cells_title">标题</div>
                 <div class="weui_cells weui_cells_form">
-                    <ul id="test">
-                    <li>
                     <div class="weui_cell weui_cell_warn">
                         <div class="weui_cell_hd"><label for="" class="weui_label">标题</label></div>
                         <div class="weui_cell_bd weui_cell_primary">
@@ -82,14 +49,45 @@
                             <div class="weui_textarea_counter"><span>0</span>/200</div>
                         </div>
                     </div>
-                    </li>
-                    <ul>
-                </div>
+               </div>
+               </li>
+
+                <li seq="1">
+
+                <div class="weui_cells_title">标题</div>
+                <div class="weui_cells weui_cells_form">
+                    <div class="weui_cell weui_cell_warn">
+                        <div class="weui_cell_hd"><label for="" class="weui_label">标题</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="text" />
+                        </div>
+                        <div class="weui_cell_ft">
+                            <i class="weui_icon_warn"></i>
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <div class="weui_uploader_bd"> 
+                                <ul class="weui_uploader_files" id="img-thumb-1"> 
+                                    <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                </ul>
+                                <div class="weui_uploader_input_wrp">
+                                    <input class="weui_uploader_input" type="file" id="img-a" accept="image/jpg,image/jpeg,image/png,image/gif" multiple />
+                            </div>
+                            <textarea class="weui_textarea" placeholder="请输入内容" rows="3"></textarea>
+                            <div class="weui_textarea_counter"><span>0</span>/200</div>
+                        </div>
+                    </div>
+               </div>
+               </li>
+
+
+               </ul>
             </div>
         </div> 
 
         <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
-            <a href="/weui/coupon.html" class="weui_tabbar_item ">
+            <a href="javascript:;"  onclick="add_para()" class="weui_tabbar_item ">
                 <div class="weui_tabbar_icon">
                     <img src="/static/image/card.png" alt="">
                 </div>
@@ -109,5 +107,161 @@
             </a>
         </div>
     </div>
+
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).on("change", 'input',function(){
+    //$('input').bind("click",function(){
+          console.log('hehe test');
+             var img = event.target.files[0];  
+  
+                // 判断是否图片  
+                if(!img){  
+                    console.log('hehe2-no img');
+  
+
+                    return ;  
+                }  
+                console.log('hehe2');
+  
+                // 判断图片格式  
+                if(!(img.type.indexOf('image')==0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name)) ){  
+                    alert('图片只能是jpg,gif,png');  
+                    return ;  
+                }  
+                console.log('hehe3');
+  
+                var reader = new FileReader();  
+                reader.readAsDataURL(img);  
+ 
+                reader.onload = function(e){ // reader onload start  
+                    var ss = '<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)></li>';
+                    $("#img-thumb-0").append('<li class="weui_uploader_file" style="background-image:url('+e.target.result+')" ></li>');
+ 
+                }; 
+
+
+
+    });
+</script>
+
+
+ <script>
+        function add_para(){
+             var y = $("#content").children().last();
+             var cur_seq = parseInt(y.attr("seq"))+1;  
+
+             var new_para='\
+                <li seq="'+ cur_seq +'">\
+                <div class="weui_cells_title">标题</div>\
+                <div class="weui_cells weui_cells_form">\
+                    <div class="weui_cell">\
+                        <div class="weui_cell_bd weui_cell_primary">\
+                            <div class="weui_uploader_bd">\
+                                <ul class="weui_uploader_files" id="img-thumb-0"> \
+                                    <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>\
+                                </ul>\
+                                <div class="weui_uploader_input_wrp">\
+                                    <input class="weui_uploader_input" type="file" seq="'+ cur_seq+ '" id="img-a" accept="image/jpg,image/jpeg,image/png,image/gif" multiple />\
+                            </div>\
+                            <textarea class="weui_textarea" placeholder="请输入内容" rows="3"></textarea>\
+                            <div class="weui_textarea_counter"><span>0</span>/200</div>\
+                        </div>\
+                    </div>\
+               </div>\
+               </li>';
+               //console.log(new_para);
+               $("#content").append(new_para);
+               //$("#content").append('<li><input type="button" seq="'+ cur_seq+ '" id="img-a" accept="image/jpg,image/jpeg,image/png,image/gif" multiple /></li>');
+
+
+        }
+
+ 
+  </script>
+ 
+
+
+    <script type="text/javascript">  
+        //$(document).ready(function(){
+        //window.onload = function(){  
+
+
+            /*
+            $('input').change(function(){
+                console.log('hehe test');
+        
+                var img = event.target.files[0];  
+  
+                // 判断是否图片  
+                if(!img){  
+                    return ;  
+                }  
+                console.log('hehe2');
+  
+                // 判断图片格式  
+                if(!(img.type.indexOf('image')==0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name)) ){  
+                    alert('图片只能是jpg,gif,png');  
+                    return ;  
+                }  
+                console.log('hehe3');
+  
+                var reader = new FileReader();  
+                reader.readAsDataURL(img);  
+ 
+                reader.onload = function(e){ // reader onload start  
+                    var ss = '<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)></li>';
+                    $("#img-thumb-0").append('<li class="weui_uploader_file" style="background-image:url('+e.target.result+')" ></li>');
+ 
+                }; 
+
+
+            });
+        //});
+        */
+        /*
+        window.onload = function(){  
+            document.getElementById('img-a').onchange = function(){  
+            //$('#img-a').change = function(){  
+
+
+                console.log('hehe1');
+                console.log(this);
+
+
+        
+                var img = event.target.files[0];  
+  
+                // 判断是否图片  
+                if(!img){  
+                    return ;  
+                }  
+                console.log('hehe2');
+  
+                // 判断图片格式  
+                if(!(img.type.indexOf('image')==0 && img.type && /\.(?:jpg|png|gif)$/.test(img.name)) ){  
+                    alert('图片只能是jpg,gif,png');  
+                    return ;  
+                }  
+                console.log('hehe3');
+  
+                var reader = new FileReader();  
+                reader.readAsDataURL(img);  
+ 
+                reader.onload = function(e){ // reader onload start  
+                    var ss = '<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)></li>';
+                    $("#img-thumb-0").append('<li class="weui_uploader_file" style="background-image:url('+e.target.result+')" ></li>');
+ 
+                }; 
+            };
+        };
+       */
+
+ 
+  </script> 
+
+
 </body>
 </html>

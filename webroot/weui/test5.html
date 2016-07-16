@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#1").bind("click",function(){
+    $("p").slideToggle();
+  });
+});
+
+function test()
+{
+    $('p').last().append('<p>abc</p>') 
+}
+
+</script>
+</head>
+<body>
+<p>这是一个段落。</p>
+<div>
+<button id="1">请点击这里</button>
+<button id='2' onclick="test()">2test</button>
+</div>
+</body>
+</html>
+
