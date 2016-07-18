@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="http://www.guqintai.net/static/css/example.css" />
 
 
+<style type="text/css"> 
+
+.image:before {
+        content: "";
+    }
+    
+    .delete {
+    	position: relative;
+    	display: inline;
+    }
+    
+    .delete:after {
+    	content: '';
+    	position:absolute;
+        top:0;
+        right:10px;
+    	height: 16px;
+    	width: 16px;
+        background-image: url('/static/image/delete.png');
+
+    }
+
+
+
+</style> 
+
+
+
+
+
 </head>
 
 <body>
@@ -34,7 +64,9 @@
                         <div class="weui_cell_bd weui_cell_primary">
                             <div class="weui_uploader_bd"> 
                                 <ul class="weui_uploader_files" id="img-thumb-0"> 
-                                    <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+	                        <div class="delete">		
+                                </div>
+
                                 </ul>
                                 <div class="weui_uploader_input_wrp">
                                     <input class="weui_uploader_input" type="file" id="0" accept="image/jpg,image/jpeg,image/png,image/gif" multiple />
@@ -72,6 +104,20 @@
         </div>
     </div>
 
+
+<div class="weui_dialog_confirm" id="dialog1" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"></div>
+        <div class="weui_dialog_bd">删除该图片</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" id="cancel_delete" class="weui_btn_dialog default">取消</a>
+            <a id="confirm_delete" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+
+
 <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
@@ -103,29 +149,56 @@
   
                 var reader = new FileReader();  
                 reader.readAsDataURL(img);  
- 
+                var tmp_id = Math.floor(Math.random()*900000) + 100000;
+
                 reader.onload = function(e){ // reader onload start  
-                    var ss = '<li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)></li>';
                     tmp = this.id;
                     console.log(tmp);
                     var tmp = "#img-thumb-" + cur_seq;
                     console.log(tmp);
-                    $(tmp).append('<li class="weui_uploader_file" style="background-image:url('+e.target.result+')"></li>');
+                    $(tmp).append('<div class="delete"><li class="weui_uploader_file" style="background-image:url('+e.target.result+')" id="'+tmp_id+'"></li></div>');
  
                 }; 
+                this.value="";  
 
 
+    });
+    
 
+    $(document).on("click", 'li.weui_uploader_file',function(){
+        console.log(this);
+        $('#confirm_delete').attr('href', 'javascript:delete_image('+this.id+')');
+        var tmp = $('#dialog1').show().on('click', '.weui_btn_dialog', function () {
+            $('#dialog1').off('click').hide();
+        });
+        console.log('hehe');
+        console.log(tmp);
     });
 </script>
 
 
- <script>
-        function add_para(){
-             var y = $("#content").children().last();
-             var cur_seq = parseInt(y.attr("seq"))+1;  
-             var img_thumb_id = "img-thumb-" + cur_seq;
-             var new_para='\
+<script>
+    
+    function delete_image(img_id){
+        //$(img_id).remove();
+        var elem = document.getElementById(img_id);
+        elem.parentNode.removeChild(elem);
+
+    }
+
+     
+
+
+
+
+
+
+
+    function add_para(){
+        var y = $("#content").children().last();
+        var cur_seq = parseInt(y.attr("seq"))+1;  
+        var img_thumb_id = "img-thumb-" + cur_seq;
+        var new_para='\
                 <li seq="'+ cur_seq +'">\
                 <div class="weui_cells_title">标题</div>\
                 <div class="weui_cells weui_cells_form">\
@@ -133,7 +206,6 @@
                         <div class="weui_cell_bd weui_cell_primary">\
                             <div class="weui_uploader_bd">\
                                 <ul class="weui_uploader_files" id=' + img_thumb_id + '> \
-                                    <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>\
                                 </ul>\
                                 <div class="weui_uploader_input_wrp">\
                                     <input class="weui_uploader_input" type="file" id="'+ cur_seq+ '" accept="image/jpg,image/jpeg,image/png,image/gif" multiple />\
@@ -144,12 +216,12 @@
                     </div>\
                </div>\
                </li>';
-               //console.log(new_para);
-               $("#content").append(new_para);
-               //$("#content").append('<li><input type="button" seq="'+ cur_seq+ '" id="img-a" accept="image/jpg,image/jpeg,image/png,image/gif" multiple /></li>');
+           //console.log(new_para);
+           $("#content").append(new_para);
+           //$("#content").append('<li><input type="button" seq="'+ cur_seq+ '" id="img-a" accept="image/jpg,image/jpeg,image/png,image/gif" multiple /></li>');
 
 
-        }
+    }
 
  
   </script>
