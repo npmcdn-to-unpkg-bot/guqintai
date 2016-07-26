@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title id="title">小兔子</title>
+
+    <link rel="stylesheet" href="https://weui.io/weui.css"/>
+    <link rel="stylesheet" href="https://weui.io/example.css" />
+
+</head>
+<body ontouchstart>
+    <div id="container" class="container"></div>
+
+    <script type="text/html" id="tpl_tabbar">
+<div class="weui_tab">
+    <div class="weui_tab_bd">
+
+    </div>
+    <div class="weui_tabbar">
+        <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_button.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">微信</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_msg.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">通讯录</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_article.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">发现</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_cell.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">我</p>
+        </a>
+    </div>
+</div>
+</script>
+
+
+
+
+    <script src="https://weui.io/zepto.min.js"></script>
+    <script src="/static/js/router.min.js"></script>
+
+    <script>
+        $(function () {
+
+            var router = new Router({
+                container: '#container',
+                enterTimeout: 250,
+                leaveTimeout: 250,
+            });
+  
+
+            var test = {
+                url: '/',
+                className: 'tabbar',
+                render: function () {
+                    //document.getElementById('title').innerHTML="测试";
+                    return $('#tpl_tabbar').html();
+                }
+            };
+
+
+
+
+             router.push(test)
+                 .init();
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>

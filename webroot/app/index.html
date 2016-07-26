@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/0.4.2/weui.css"/>
+    <link rel="stylesheet" href="https://weui.io/example.css" />
+    <script type="text/javascript" src="/static/js/baiduTemplate.js"></script>
+
+
+    <title id="title">小兔子</title>
+
+
+</head>
+<body ontouchstart>
+    <div id="container" class="container"></div>
+
+    <script type="text/html" id="tpl_test">
+    <div class="weui_tab">
+    <div class="weui_tab_bd">
+
+    </div>
+    <div class="weui_tabbar">
+        <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_button.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">微信</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_msg.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">通讯录</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_article.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">发现</p>
+        </a>
+        <a href="javascript:;" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img src="./images/icon_nav_cell.png" alt="">
+            </div>
+            <p class="weui_tabbar_label">我</p>
+        </a>
+    </div>
+    </div>
+    </script>
+
+
+    <script type="text/html" id="tpl_article">
+    <div class="bd">
+        <div class="weui_panel">
+            <div class="weui_panel_bd">
+                <article class="weui_article">
+                    <h1>大标题</h1>
+                    <section>
+                        <h2 class="title">章标题</h2>
+                        <section>
+                            <h3>1.1 节标题</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute</p>
+                            <p>
+                                <img src="http://xtuz-image.oss-cn-beijing.aliyuncs.com/guqintai/DSC_0251.jpg" alt="">
+                                <img src="http://xtuz-image.oss-cn-beijing.aliyuncs.com/guqintai/DSC_0251.jpg" alt="">
+                            </p>
+                        </section>
+                        <section>
+                            <h3>1.2 节标题</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </section>
+                    </section>
+                </article>
+            </div>
+        </div>
+
+        <div class="weui_panel">
+            <div class="weui_panel_bd">
+ 
+                <article class="weui_article">
+                    <h1>大标题</h1>
+                    <section>
+                        <h2 class="title">章标题</h2>
+                        <section>
+                            <h3>1.1 节标题</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute</p>
+                            <p>
+                                <img src="http://xtuz-image.oss-cn-beijing.aliyuncs.com/guqintai/DSC_0251.jpg" alt="">
+                                <img src="http://xtuz-image.oss-cn-beijing.aliyuncs.com/guqintai/DSC_0251.jpg" alt="">
+                            </p>
+                        </section>
+                        <section>
+                            <h3>1.2 节标题</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </section>
+                    </section>
+                </article>
+   
+
+
+            </div>
+        </div>
+
+
+
+    </div>   
+
+
+
+
+    </script>
+
+    <script type="text/html" id="tpl_quan">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <div class="bd">
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="#/article/1">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">标题一</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <div class="weui_uploader_bd" style="margin-top:5px;">
+                                    <ul class="weui_uploader_files">
+                                        <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                        <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                        <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                    </ul>
+                                </div>
+                            
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="#">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">文字帖</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="#">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">标题一</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <div class="weui_uploader_bd" style="margin-top:5px;">
+                                    <ul class="weui_uploader_files">
+                                        <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                        <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                        <li class="weui_uploader_file" style="background-image:url(http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/)"></li>
+                                    </ul>
+                                </div>
+                            
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="#/article/1">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">文字帖</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="/weui/article.html">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">文字帖</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="/weui/article.html">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">文字帖</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a class="weui_media_box weui_media_appmsg weui_media_text" href="/weui/article.html">
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">文字帖</h4>
+                                <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta">老狼不挂</li>
+                                    <li class="weui_media_info_meta">2016-07-14</li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra">10/100</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/post" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">我要发帖</p>
+            </a>
+            <a href="#/" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+
+
+    </script>
+
+
+
+
+    <script type="text/html" id="tpl_bbs">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <div class="bd">
+                <div class="weui_cells weui_cells_access">
+                    <a class="weui_cell" href="#/quan">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>辣妈圈</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+
+                    <a class="weui_cell" href="/weui/quan.html">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>有问有答</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </a>
+                </div>
+
+                <div class="weui_cells weui_cells_access">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>益智故事</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>胎教音乐</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+ 
+                    </div>
+                </div>
+
+                <div class="weui_cells weui_cells_access">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>每月精品</p>
+                        </div>
+                        <div class="weui_cell_ft">百种优品尖货</div>
+ 
+                   </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/bbs" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">兔子社区</p>
+            </a>
+            <a href="#/" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+
+
+    </script> 
+
+
+    <script type="text/html" id="tpl_coupon">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <div class="hd">
+                <h1 class="page_title">小兔子官网商城</h1>
+                <p class="page_desc">官方商城http://xtuz.taobao.com，联系掌柜使用优惠券</p>
+            </div>
+
+            <div class="bd">
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                            <div class="weui_media_hd">
+                                <img class="weui_media_appmsg_thumb" src="/static/image/5yuan.png" alt="">
+                            </div>
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">券号 0012 3341 5587</h4>
+                                <p class="weui_media_desc">凭12位券号使用，全场满100元可用，截止时间：2016-8-29</p>
+                            </div>
+                        </a>
+                        <a class="weui_panel_ft" href="#/invalid_coupon">查看历史优惠券</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/bbs" class="weui_tabbar_item">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">兔子社区</p>
+            </a>
+            <a href="#/" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+    </script>
+
+
+    <script type="text/html" id="tpl_baidu_coupon">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <div class="hd">
+                <h1 class="page_title">小兔子官网商城</h1>
+                <p class="page_desc">官方商城http://xtuz.taobao.com，联系掌柜使用优惠券</p>
+            </div>
+
+            <div class="bd">
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <%for(var i=0;i<list.length;i++){%>
+                        <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                            <div class="weui_media_hd">
+                                <img class="weui_media_appmsg_thumb" src="<%=list[i].img%>" alt="">
+                            </div>
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title">券号 <%=list[i].coupon_no%></h4>
+                                <p class="weui_media_desc">凭12位券号使用，全场满100元可用，截止时间：<%=list[i].end_date%></p>
+                            </div>
+                        </a>
+                        <%}%>
+                        <a class="weui_panel_ft" href="#/invalid_coupon">查看历史优惠券</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/bbs" class="weui_tabbar_item">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">兔子社区</p>
+            </a>
+            <a href="#/" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+    </script>
+
+
+
+    <script type="text/html" id="tpl_invalid_coupon">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+
+            <div class="bd">
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                            <div class="weui_media_hd">
+                                <img class="weui_media_appmsg_thumb" src="/static/image/5yuan.png" alt="">
+                            </div>
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title"><s>券号 0012 3341 5587</s></h4>
+                                <p class="weui_media_desc">凭12位券号使用，全场满100元可用，截止时间：2016-8-29</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/bbs" class="weui_tabbar_item">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">兔子社区</p>
+            </a>
+            <a href="#/" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+    </script>
+
+
+
+
+
+    <script type="text/html" id="tpl_forget_password">
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">手机号</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="tel" placeholder="请输入手机号码">
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="number" placeholder="请输入验证码"/>
+            </div>
+            <div class="weui_cell_ft">
+                <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary">获取验证码</a>
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">密码</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="password" placeholder="请输入6-16位密码">
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">确认密码</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="password" placeholder="再次确认密码">
+            </div>
+        </div>
+
+    </div>
+
+    <br>   
+    <div class="bd spacing">
+        <div class="button_sp_area">
+            <a href="javascript:;" class="weui_btn  weui_btn_primary">完成</a>
+
+        </div>
+    </div>
+
+
+
+    </script>
+
+
+
+
+    <script type="text/html" id="tpl_register">
+    <div class="hd">
+        <h1 class="page_title">小兔子</h1>
+        <p class="page_desc">一切为了宝贝的成长-xtuz.net</p>
+    </div>
+
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">手机号</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="tel" placeholder="请输入手机号码">
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="number" placeholder="请输入验证码"/>
+            </div>
+            <div class="weui_cell_ft">
+                <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary">获取验证码</a>
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">密码</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="password" placeholder="请输入6-16位密码">
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">确认密码</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="password" placeholder="再次确认密码">
+            </div>
+        </div>
+
+    </div>
+
+    <br>   
+    <div class="bd spacing">
+        <div class="button_sp_area">
+            <a href="javascript:register();" class="weui_btn  weui_btn_primary">立即注册</a>
+
+        </div>
+    </div>
+
+    <div class="weui_cells_checkbox weui_cells_tips">
+        <label class="weui_cell weui_check_label" for="s11">
+            <div class="weui_cell_hd">
+                <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
+                <i class="weui_icon_checked"></i>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>我已经阅读并同意《协议》</p>
+            </div>
+        </label>   
+    </div>
+
+
+    </script>
+
+    <script type="text/html" id="tpl_login">
+    <div class="hd">
+        <h1 class="page_title">小兔子</h1>
+        <p class="page_desc">一切为了宝贝的成长-xtuz.net</p>
+    </div>
+
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">手机号</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="tel" placeholder="请输入手机号">
+            </div>
+        </div>
+
+        <div class="weui_cell">
+            <div class="weui_cell_hd">
+                <label class="weui_label">密码</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="password" placeholder="请输入登陆密码">
+            </div>
+        </div>
+    </div>
+
+    <br>   
+    <div class="bd spacing">
+        <div class="button_sp_area">
+            <a href="#/" class="weui_btn  weui_btn_primary">登陆</a>
+          
+        </div>
+    </div>
+
+    <a href="#/register" style="float:left;" class="weui_cells_title">立即注册</a>
+    <a href="#/forget_password" style="float:right" class="weui_cells_title">忘记密码</a>
+
+
+    </script>
+
+
+    <script type="text/html" id="tpl_home">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <div class="bd">
+                <div class="weui_cells_title">个人设置</div>
+                <div class="weui_cells weui_cells_access">
+                    <div class="weui_cell" href="javascript:;">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>修改头像</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+
+                    <div class="weui_cell" href="javascript:;">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>修改昵称</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+
+                    <div class="weui_cell" href="javascript:;">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>修改昵称</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+
+ 
+                    <div class="weui_cell" href="javascript:;">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>修改昵称</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+
+
+                    <div class="weui_cell" href="javascript:;">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>修改密码</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+                </div>
+
+               
+                <div class="weui_cells_title">辣妈圈</div>
+                <div class="weui_cells weui_cells_access">
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>我的帖子</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+             
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>我的回复</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <p>收藏好帖</p>
+                        </div>
+                        <div class="weui_cell_ft"></div>
+                    </div>
+                </div>
+
+                <div class="weui_cells_title">积分优惠券</div>
+                    <div class="weui_cells weui_cells_access">
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>优惠券</p>
+                            </div>
+                            <div class="weui_cell_ft">现金折扣</div>
+                        </div>
+
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>我的积分</p>
+                            </div>
+                            <div class="weui_cell_ft">积分兑换</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/bbs" class="weui_tabbar_item">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">兔子社区</p>
+            </a>
+            <a href="#/home" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+    </script>
+
+    <script id="t:_1234-abcd-1" type="text/html">
+    <div>
+    <!-- 我是注释，语法均为Javascript原生语法，默认分割符为 <% %> ，也可以自定义，参见API部分 -->
+    <!-- 输出变量语句，输出title -->
+    <h1>title:<%=title%></h1>
+    <!-- 判断语句if else-->
+    <%if(list.length>1) { %>
+        <h2>输出list，共有<%=list.length%>个元素</h2>
+        <ul>
+            <!-- 循环语句 for-->
+            <%for(var i=0;i<5;i++){%>
+                <li><%=list[i]%></li>
+            <%}%>
+        </ul>
+    <%}else{%>
+        <h2>没有list数据</h2>   
+    <%}%>
+    </div>  
+    </script>
+
+
+    <script src="https://weui.io/zepto.min.js"></script>
+    <script src="/static/js/router.min.js"></script>
+
+    <script>
+
+        $(function () {
+
+            var router = new Router({
+                container: '#container',
+                enterTimeout: 250,
+                leaveTimeout: 50,
+            });
+  
+            var home = {
+                url: '/',
+                className: 'home',
+                render: function () {
+                    document.getElementById('title').innerHTML="欢迎";
+                    return $('#tpl_home').html();
+                }
+            };
+
+
+            var login = {
+                url: '/login',
+                className: 'login',
+                render: function () {
+                    document.getElementById('title').innerHTML="登陆";
+                    return $('#tpl_login').html();
+                }
+            };
+
+            var register = {
+                url: '/register',
+                className: 'register',
+                render: function () {
+                    document.getElementById('title').innerHTML="注册";
+                    return $('#tpl_register').html();
+                }
+            };
+
+            var forget_password = {
+                url: '/forget_password',
+                className: 'forget_password',
+                render: function () {
+                    document.getElementById('title').innerHTML="忘记密码";
+                    return $('#tpl_forget_password').html();
+                }
+            };
+
+            var coupon = {
+                url: '/coupon',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="优惠券";
+                    //return $('#tpl_coupon').html();
+                    return couponT();
+                }
+            };
+
+            var invalid_coupon = {
+                url: '/invalid_coupon',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="历史优惠券";
+                    return $('#tpl_invalid_coupon').html();
+                }
+            };
+
+
+            var bbs = {
+                url: '/bbs',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="社区";
+                    return $('#tpl_bbs').html();
+                }
+            };
+
+            var quan = {
+                url: '/quan',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="辣妈圈";
+                    return $('#tpl_quan').html();
+                }
+            };
+
+            var post = {
+                url: '/post',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="发帖";
+                    return $('#tpl_post').html();
+                }
+            };
+
+
+            var article = {
+                url: '/article/:id',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="文章";
+                    var id = this.params.id;
+                    console.log(id);
+                    return $('#tpl_article').html();
+                }
+            };
+
+
+
+            var test = {
+                url: '/test',
+                className: 'tabbar',
+                render: function () {
+                    document.getElementById('title').innerHTML="测试";
+                    return $('#tpl_test').html();
+                }
+            };
+
+
+
+            var button = {
+                url: '/button',
+                className: 'button',
+                render: function () {
+                    console.log('hehe');
+                }
+             };
+
+
+             var baidu = {
+                url: '/baidu',
+                className: 'tabbar',
+                render: function () {
+                   //var bt=baidu.template;
+                    //var html=bt('t:_1234-abcd-1',data);
+                    return baiduT();
+                    //return html;
+                    console.log('hehe');
+                }
+             };
+
+
+             router.push(home)
+                 .push(test)
+                 .push(button)
+                 .push(login)
+                 .push(register)
+                 .push(forget_password)
+                 .push(coupon)
+                 .push(invalid_coupon)
+                 .push(bbs)
+                 .push(quan)
+                 .push(article)
+                 .push(baidu)
+                 .init();
+
+        });
+
+    /*
+    function baidu()
+    {
+        return "hehe";
+    }
+    */
+
+
+    </script>
+
+    <script>
+    function register(){
+        alert('register');
+    }
+ 
+    function baiduT()
+    {
+        return "hehe";
+    }
+
+
+    function couponT()
+    {
+        var data={
+            "list":[
+                {'img': '/static/image/5yuan.png', 'coupon_no': '0012 3341 5587', 'end_date': '2015-06-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+            ]
+        };
+        console.log('hehe');
+        var bt=baidu.template;
+        var html=bt('tpl_baidu_coupon',data);
+        return html
+    }
+
+
+    </script>
+
+</body>
+</html>
