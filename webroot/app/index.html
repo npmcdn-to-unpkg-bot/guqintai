@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
+    <!--    
     <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/0.4.2/weui.css"/>
-    <link rel="stylesheet" href="https://weui.io/example.css" />
+    -->
+    <link rel="stylesheet" href="/static/css/weui.css"/>
+    <link rel="stylesheet" href="/static/css/example.css" />
+    <!--
+    <link rel="stylesheet" href="/static/css/example.css" />
+    -->
+  
     <script type="text/javascript" src="/static/js/baiduTemplate.js"></script>
-
 
     <title id="title">小兔子</title>
 
@@ -17,38 +23,102 @@
     <div id="container" class="container"></div>
 
     <script type="text/html" id="tpl_test">
-    <div class="weui_tab">
-    <div class="weui_tab_bd">
-
-    </div>
-    <div class="weui_tabbar">
-        <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
-            <div class="weui_tabbar_icon">
-                <img src="./images/icon_nav_button.png" alt="">
-            </div>
-            <p class="weui_tabbar_label">微信</p>
-        </a>
-        <a href="javascript:;" class="weui_tabbar_item">
-            <div class="weui_tabbar_icon">
-                <img src="./images/icon_nav_msg.png" alt="">
-            </div>
-            <p class="weui_tabbar_label">通讯录</p>
-        </a>
-        <a href="javascript:;" class="weui_tabbar_item">
-            <div class="weui_tabbar_icon">
-                <img src="./images/icon_nav_article.png" alt="">
-            </div>
-            <p class="weui_tabbar_label">发现</p>
-        </a>
-        <a href="javascript:;" class="weui_tabbar_item">
-            <div class="weui_tabbar_icon">
-                <img src="./images/icon_nav_cell.png" alt="">
-            </div>
-            <p class="weui_tabbar_label">我</p>
-        </a>
-    </div>
-    </div>
     </script>
+
+
+
+    <script type="text/html" id="tpl_baidu_post">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+            <div class="bd">
+                <ul id="content">
+                <li seq="0">
+
+                <div class="weui_cells weui_cells_form">
+                    <div class="weui_cell weui_cell_warn">
+                        <div class="weui_cell_hd"><label for="" class="weui_label">标题</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="text" />
+                        </div>
+                        <div class="weui_cell_ft">
+                            <i class="weui_icon_warn"></i>
+                        </div>
+                    </div>
+
+                    <div class="weui_cell">
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <div class="weui_uploader_bd"> 
+                                <ul class="weui_uploader_files" id="img-thumb-0"> 
+	                        <div class="delete">		
+                                </div>
+                                </ul>
+                                <div class="weui_uploader_input_wrp">
+                                    <input class="weui_uploader_input" type="file" id="0" accept="image/jpg,image/jpeg,image/png,image/gif" multiple />
+                            </div>
+
+                            <textarea class="weui_textarea" placeholder="请输入内容" rows="3"></textarea>
+                            <div class="weui_textarea_counter"><span>0</span>/200</div>
+
+                        </div>
+                        <div class="weui_cell_ft">
+                            <i class="weui_icon_warn"></i>
+                        </div>
+                    </div>
+               </div>
+               </li>
+               </ul>
+            </div>
+        </div> 
+
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="javascript:;"  onclick="add_para()" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">添加段落</p>
+            </a>
+            <a href="/weui/bbs.html" class="weui_tabbar_item">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">保存</p>
+            </a>
+            <a href="/weui/home.html" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">发送</p>
+            </a>
+        </div>
+    </div>
+
+
+<div class="weui_dialog_confirm" id="dialog1" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"></div>
+        <div class="weui_dialog_bd">删除该图片</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" id="cancel_delete" class="weui_btn_dialog default">取消</a>
+            <a id="confirm_delete" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+
+    <!--BEGIN toast-->
+    <div id="toast" style="display: none;">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <i class="weui_icon_toast"></i>
+            <p class="weui_toast_content">已添加段落</p>
+        </div>
+    </div>
+    <!--end toast-->
+
+    </script>
+
+
+
 
 
     <script type="text/html" id="tpl_article">
@@ -290,7 +360,69 @@
 
     </script>
 
+    <script type="text/html" id="tpl_baidu_quan">
 
+    <div class="weui_tab">
+        <div class="weui_navbar">
+            <a href="#/bbs" style="color: black;" class="weui_navbar_item">
+                <回到社区
+            </a>
+            <div class="weui_navbar_item">
+                <a href="#/post" style="color: black;">我要发帖</a>
+            </div>
+
+            <div class="weui_navbar_item">
+                上一页
+            </div>
+            <div class="weui_navbar_item">
+                <span style="color: #5cb85c;">1/22</span> 跳转
+            </div>
+            <div class="weui_navbar_item">
+                下一页
+            </div>
+        </div>
+
+
+
+        <div class="weui_tab_bd">
+            <div id="quan_bd" class="bd">
+                <%for(var i=0;i<list.length;i++){%> 
+                <div id="article_quan" class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <!--
+                        <a id="article_link" class="weui_media_box weui_media_appmsg weui_media_text" href="#/article/<%=list[i].article_id%>">
+                        -->
+                        <a id="article_link" class="weui_media_box weui_media_appmsg weui_media_text" href="/weui/article.html">
+
+
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title"><%=list[i].title%></h4>
+                                <p class="weui_media_desc"><%=list[i].abstract%></p>
+                                
+                                <div class="weui_uploader_bd" style="margin-top:5px;">
+                                    <ul class="weui_media_info" style="margin-top:5px;">
+                                    <%for(var j=0;j<list[i].thumbnail.length;j++){%>
+                                    <li class="weui_uploader_file" style="background-image:url(<%=list[i].thumbnail[j]%>)"></li>
+                                    <%}%> 
+                                    </ul>
+                                </div> 
+                           
+                                <ul class="weui_media_info" style="margin-top:5px;">
+                                    <li class="weui_media_info_meta"><%=list[i].author%></li>
+                                    <li class="weui_media_info_meta"><%=list[i].create_time%></li>
+                                    <li class="weui_media_info_meta weui_media_info_meta_extra"><%=list[i].reply_num%>/<%=list[i].view_num%></li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <%}%>  
+            </div>
+        </div>
+    </div>
+    </script>
+
+ 
 
 
     <script type="text/html" id="tpl_bbs">
@@ -367,53 +499,6 @@
     </script> 
 
 
-    <script type="text/html" id="tpl_coupon">
-    <div class="weui_tab">
-        <div class="weui_tab_bd">
-            <div class="hd">
-                <h1 class="page_title">小兔子官网商城</h1>
-                <p class="page_desc">官方商城http://xtuz.taobao.com，联系掌柜使用优惠券</p>
-            </div>
-
-            <div class="bd">
-                <div class="weui_panel weui_panel_access">
-                    <div class="weui_panel_bd">
-                        <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
-                            <div class="weui_media_hd">
-                                <img class="weui_media_appmsg_thumb" src="/static/image/5yuan.png" alt="">
-                            </div>
-                            <div class="weui_media_bd">
-                                <h4 class="weui_media_title">券号 0012 3341 5587</h4>
-                                <p class="weui_media_desc">凭12位券号使用，全场满100元可用，截止时间：2016-8-29</p>
-                            </div>
-                        </a>
-                        <a class="weui_panel_ft" href="#/invalid_coupon">查看历史优惠券</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
-            <a href="#/coupon" class="weui_tabbar_item weui_bar_item_on">
-                <div class="weui_tabbar_icon">
-                    <img src="/static/image/card.png" alt="">
-                </div>
-                <p class="weui_tabbar_label">优惠券</p>
-            </a>
-            <a href="#/bbs" class="weui_tabbar_item">
-                <div class="weui_tabbar_icon">
-                    <img src="/static/image/bbs.png" alt="">
-                </div>
-                <p class="weui_tabbar_label">兔子社区</p>
-            </a>
-            <a href="#/" class="weui_tabbar_item ">
-                <div class="weui_tabbar_icon">
-                    <img src="/static/image/user.png" alt="">
-                </div>
-                <p class="weui_tabbar_label">会员中心</p>
-            </a>
-        </div>
-    </div>
-    </script>
 
 
     <script type="text/html" id="tpl_baidu_coupon">
@@ -465,6 +550,53 @@
         </div>
     </div>
     </script>
+
+
+    <script type="text/html" id="tpl_baidu_invalid_coupon">
+    <div class="weui_tab">
+        <div class="weui_tab_bd">
+
+            <div class="bd">
+                <div class="weui_panel weui_panel_access">
+                    <div class="weui_panel_bd">
+                        <%for(var i=0;i<list.length;i++){%>
+                        <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
+                            <div class="weui_media_hd">
+                                <img class="weui_media_appmsg_thumb" src="<%=list[i].img%>" alt="">
+                            </div>
+                            <div class="weui_media_bd">
+                                <h4 class="weui_media_title"><s>券号 <%=list[i].coupon_no%></s></h4>
+                                <p class="weui_media_desc">凭12位券号使用，全场满100元可用，截止时间：<%=list[i].end_date%></p>
+                            </div>
+                        </a>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weui_tabbar" style="border-top-width: 0;border-bottom-width: 0;">
+            <a href="#/coupon" class="weui_tabbar_item weui_bar_item_on">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/card.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">优惠券</p>
+            </a>
+            <a href="#/bbs" class="weui_tabbar_item">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/bbs.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">兔子社区</p>
+            </a>
+            <a href="#/" class="weui_tabbar_item ">
+                <div class="weui_tabbar_icon">
+                    <img src="/static/image/user.png" alt="">
+                </div>
+                <p class="weui_tabbar_label">会员中心</p>
+            </a>
+        </div>
+    </div>
+    </script>
+
 
 
 
@@ -563,9 +695,6 @@
 
         </div>
     </div>
-
-
-
     </script>
 
 
@@ -816,10 +945,12 @@
     </div>  
     </script>
 
+    <script src="/static/js/zepto.min.js"></script>
+    <!-- 
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    -->
 
-    <script src="https://weui.io/zepto.min.js"></script>
     <script src="/static/js/router.min.js"></script>
-
     <script>
 
         $(function () {
@@ -827,7 +958,7 @@
             var router = new Router({
                 container: '#container',
                 enterTimeout: 250,
-                leaveTimeout: 50,
+                leaveTimeout: 250,
             });
   
             var home = {
@@ -882,7 +1013,9 @@
                 className: 'tabbar',
                 render: function () {
                     document.getElementById('title').innerHTML="历史优惠券";
-                    return $('#tpl_invalid_coupon').html();
+                    //return $('#tpl_invalid_coupon').html();
+                    return invalid_couponT();
+
                 }
             };
 
@@ -901,7 +1034,7 @@
                 className: 'tabbar',
                 render: function () {
                     document.getElementById('title').innerHTML="辣妈圈";
-                    return $('#tpl_quan').html();
+                    return quanT();
                 }
             };
 
@@ -910,7 +1043,7 @@
                 className: 'tabbar',
                 render: function () {
                     document.getElementById('title').innerHTML="发帖";
-                    return $('#tpl_post').html();
+                    return $('#tpl_baidu_post').html();
                 }
             };
 
@@ -921,7 +1054,6 @@
                 render: function () {
                     document.getElementById('title').innerHTML="文章";
                     var id = this.params.id;
-                    console.log(id);
                     return $('#tpl_article').html();
                 }
             };
@@ -930,7 +1062,7 @@
 
             var test = {
                 url: '/test',
-                className: 'tabbar',
+                className: 'button',
                 render: function () {
                     document.getElementById('title').innerHTML="测试";
                     return $('#tpl_test').html();
@@ -971,10 +1103,15 @@
                  .push(invalid_coupon)
                  .push(bbs)
                  .push(quan)
+                 .push(post)
                  .push(article)
                  .push(baidu)
                  .init();
 
+
+        });
+
+        $(document).ready(function () {
         });
 
     /*
@@ -1013,14 +1150,166 @@
                 {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
             ]
         };
-        console.log('hehe');
         var bt=baidu.template;
         var html=bt('tpl_baidu_coupon',data);
         return html
     }
 
+    function invalid_couponT()
+    {
+        var data={
+            "list":[
+                {'img': '/static/image/5yuan.png', 'coupon_no': '0012 3341 5587', 'end_date': '2015-06-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+                {'img': '/static/image/5yuan.png', 'coupon_no': '3341 3341 5577', 'end_date': '2015-07-07'},
+            ]
+        };
+        console.log('hehe');
+        var bt=baidu.template;
+        var html=bt('tpl_baidu_invalid_coupon',data);
+        return html
+    }
 
+    function quanT()
+    {
+        var data={
+            "cur_page": 1,
+            "total_page": 15,
+            "next_page": 2,
+            "last_page": 0,
+            "list":[
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+                {'title': '怀孕要准备哪些东西-资料整理', 
+                 'abstract': '进入37周以后,你可要随时做好分娩的准备,因为在预产期之前的两周内,随时可能生产.所以,孕晚期心理上的准备也是非常重要的,此时及以后的日子,你应该和丈夫一起为分娩做准备了,以免到时手忙脚乱.', 
+                 'author': 'Willie',
+                 'article_id': 1234,
+                 'create_time': '2016-07-04',
+                 'view_num': '100',
+                 'reply_num': '10',
+                 'thumbnail': ['/static/image/5yuan.png', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/', 'http://shp.qpic.cn/weixinsrc_pic/pScBR7sbqjOBJomcuvVJ6iacVrbMJaoJZkFUIq4nzQZUIqzTKziam7ibg/']},
+            ]
+        };
+        console.log('hehe');
+        var bt=baidu.template;
+        var html=bt('tpl_baidu_quan',data);
+        return html;
+    }
+
+    function add_para(){
+        var y = $("#content").children().last();
+        var cur_seq = parseInt(y.attr("seq"))+1;  
+        var img_thumb_id = "img-thumb-" + cur_seq;
+        var new_para='\
+                <li id="seq'+cur_seq  +'"  seq="'+ cur_seq +'">\
+                <div class="weui_cells_title">段落<a href="javascript:del_para('+cur_seq+');" style="float:right;" class="weui_btn weui_btn_mini weui_btn_warn">删除</a></div>\
+                <div class="weui_cells weui_cells_form">\
+                    <div class="weui_cell">\
+                        <div class="weui_cell_bd weui_cell_primary">\
+                            <div class="weui_uploader_bd">\
+                                <ul class="weui_uploader_files" id=' + img_thumb_id + '> \
+                                </ul>\
+                                <div class="weui_uploader_input_wrp">\
+                                    <input class="weui_uploader_input" type="file" id="'+ cur_seq+ '" accept="image/jpg,image/jpeg,image/png,image/gif" multiple />\
+                            </div>\
+                            <textarea class="weui_textarea" placeholder="请输入内容" rows="3"></textarea>\
+                            <div class="weui_textarea_counter"><span>0</span>/200</div>\
+                        </div>\
+                    </div>\
+               </div>\
+               </li>';
+           $("#content").append(new_para);
+           $('#toast').show();
+           setTimeout(function () {
+                $('#toast').hide();
+            }, 2000);
+    }
+
+    function del_para(seq_id){
+        console.log(seq_id);
+        var tmp = "#seq" + seq_id;
+        $(tmp).remove(); 
+    }
+
+ 
     </script>
+
 
 </body>
 </html>
